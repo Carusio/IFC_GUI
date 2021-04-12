@@ -1,0 +1,42 @@
+﻿<Window x:Class="IFC_GUI.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IFC_GUI"
+        
+        xmlns:nodenetwork="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"        
+        xmlns:views="clr-namespace:IFC_GUI.Views"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900">
+    <Window.Resources>
+        <ContextMenu x:Key="nodeMenu" x:Shared="True">
+            <MenuItem x:Name="showSubNetworkButton" Header="Show subnetwork"/>
+        </ContextMenu>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="100"/>
+        </Grid.RowDefinitions>
+
+        <views:MenuBarView x:Name="menuBarView" Grid.Row="0"/>
+        <views:BreadcrumbBarView x:Name="breadcrumbBarView" Grid.Row="1" Grid.ColumnSpan="5" MinHeight="30"/>
+
+        <nodenetwork:NetworkView x:Name="networkView" Grid.Row="2">
+            <nodenetwork:NetworkView.Resources>
+                <Style TargetType="nodenetwork:NodeView">
+                    <Setter Property="ContextMenu" Value="{StaticResource nodeMenu}" />
+                </Style>
+            </nodenetwork:NetworkView.Resources>
+        </nodenetwork:NetworkView>
+
+        <views:NodeListView x:Name="nodeListView" Grid.Row="3"/>
+
+
+    </Grid>
+</Window>
