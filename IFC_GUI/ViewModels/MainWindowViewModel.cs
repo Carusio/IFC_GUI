@@ -3,6 +3,7 @@ using IFC_GUI.DataAccess;
 using IFC_GUI.Models;
 using IFC_GUI.ViewModels.NodeViewModels;
 using IFC_GUI.ViewModels.NodeViewModels.NodeTypes;
+using IFC_GUI.ViewModels.Toolkit.Layout;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 using System;
@@ -41,11 +42,21 @@ namespace IFC_GUI.ViewModels
         public NodeListViewModel NodeList { get; } = new NodeListViewModel();
         public MenuBarViewModel MenuBar { get; } = new MenuBarViewModel();
 
-        // Subnetworks
-        public ReactiveCommand<Unit, Unit> ShowSubNetwork { get; }
-
+        // List of all TaskModels that are currently shown via TaskNodes
         public List<TaskModel> globalAllTaskModels { get; set; } = new List<TaskModel>();
+        // the path of the ifc file which is loaded
         public string globalFileName { get; set; }
+
+        // TaskTime Window
+        //public IfcTaskTimeViewModel TaskTimeWindow { get; set; }
+        //
+
+        // ShowSubnetwork command
+        public ReactiveCommand<Unit, Unit> ShowSubNetwork { get; }
+        public ReactiveCommand<Unit, Unit> AutoLayout { get; }
+
+
+
 
         public MainWindowViewModel()
         {
@@ -71,7 +82,7 @@ namespace IFC_GUI.ViewModels
                     }
                 },
                 removedNode => {
-                    if (removedNode.GetType() == typeof(IfcTaskNodeViewModel) && !globalAllTaskModels.Contains(((IfcTaskNodeViewModel)removedNode).TaskModel))
+                    if (removedNode.GetType() == typeof(IfcTaskNodeViewModel) && globalAllTaskModels.Contains(((IfcTaskNodeViewModel)removedNode).TaskModel)) // check 'contains' is not needed but we keep it for safety
                     {
                         globalAllTaskModels.Remove(((IfcTaskNodeViewModel)removedNode).TaskModel);
                     }
@@ -105,6 +116,10 @@ namespace IFC_GUI.ViewModels
             NodeList.AddNodeType(() => new IfcTaskNodeViewModel());
             NodeList.AddNodeType(() => new TestNodeViewModel());
 
+            // AutoLayout command
+            ForceDirectedLayouter layouter = new ForceDirectedLayouter();
+            AutoLayout = ReactiveCommand.Create(() => layouter.Layout(new Configuration { Network = Network }, 10000));
+
             //TODO: selected Node is not a groupnode so it has no subnet, but every Node should have a subnet
             //TODO: always create subnet even if empty nests
             ShowSubNetwork = ReactiveCommand.Create(() =>
@@ -114,19 +129,10 @@ namespace IFC_GUI.ViewModels
                     return;
                 }
 
-                // update globalAllTaskModels list
-                /*var allTaskNodesVM = Network.Nodes.Items.OfType<IfcTaskNodeViewModel>();
-                foreach (var TaskNodeVM in allTaskNodesVM)
-                {
-                    if (!globalAllTaskModels.Contains(TaskNodeVM.TaskModel))
-                    {
-                        globalAllTaskModels.Add(TaskNodeVM.TaskModel);
-                    }
-                }*/
-
                 // show subnetwork of last or first selectedNode in SelectedNodes list - must be an IfcTaskNode
                 var selectedNode = Network.SelectedNodes.Items.First(); // .Last()
                 IfcTaskNodeViewModel selectedTaskNode;
+
                 // dont do anything if selectedNode is not an IfcTaskNode
                 if (selectedNode.GetType() != typeof(IfcTaskNodeViewModel))
                 {
@@ -154,13 +160,13 @@ namespace IFC_GUI.ViewModels
                                 }
                                 if (subnetwork.TaskModel != null) // actually not needed
                                 {
-                                    if(!tm.IsNestedBy.Contains(subnetwork.TaskModel.GlobalId))
+                                    if(!tm.Nests.Contains(subnetwork.TaskModel.GlobalId))
                                     {
-                                        tm.IsNestedBy.Add(subnetwork.TaskModel.GlobalId);
+                                        tm.Nests.Add(subnetwork.TaskModel.GlobalId);
                                     }
-                                    if(!subnetwork.TaskModel.Nests.Contains(tm.GlobalId))
+                                    if(!subnetwork.TaskModel.IsNestedBy.Contains(tm.GlobalId))
                                     {
-                                        subnetwork.TaskModel.Nests.Add(tm.GlobalId);
+                                        subnetwork.TaskModel.IsNestedBy.Add(tm.GlobalId);
                                     }
                                 }
                             }
@@ -172,8 +178,8 @@ namespace IFC_GUI.ViewModels
                                 globalAllTaskModels.Remove(tm);
                                 if (subnetwork.TaskModel != null) // actually not needed
                                 {
-                                    tm.IsNestedBy.Remove(subnetwork.TaskModel.GlobalId);
-                                    subnetwork.TaskModel.Nests.Remove(tm.GlobalId);
+                                    tm.Nests.Remove(subnetwork.TaskModel.GlobalId);
+                                    subnetwork.TaskModel.IsNestedBy.Remove(tm.GlobalId);
                                 }
                             }
                         });

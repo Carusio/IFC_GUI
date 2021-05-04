@@ -55,7 +55,13 @@ namespace IFC_GUI.Views
                 this.OneWayBind(ViewModel, vm => vm.NetworkBreadcrumbBar, v => v.breadcrumbBarView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.MenuBar, v => v.menuBarView.ViewModel).DisposeWith(d);
 
+                // right-click menu to show the subnetwork of a node
                 this.BindCommand(ViewModel, vm => vm.ShowSubNetwork, v => v.showSubNetworkButton).DisposeWith(d);
+                // Button for automatic layouting
+                this.BindCommand(ViewModel, vm => vm.AutoLayout, v => v.autoLayoutButton);
+
+                // IFC Task Time
+                // this.BindCommand(ViewModel, vm => vm.TaskTimeWindow, v => v.taskTimeView.ViewModel);
             });
             this.ViewModel = new MainWindowViewModel();
         }

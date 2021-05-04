@@ -16,9 +16,10 @@
             <MenuItem x:Name="BtnOpenFile" Header="_Open" InputGestureText="Ctrl+O" Click="BtnOpenFile_Click"/>
             <Separator />
             <MenuItem x:Name="BtnSaveFile" Header="_Save" InputGestureText="Ctrl+S" Click="BtnSaveFile_Click"/>
-            <MenuItem x:Name="BtnSaveAsFile" Header="Save As"/>
+            <MenuItem x:Name="BtnSaveAsFile" Header="Save As" Click="BtnSaveAsFile_Click"/>
             <Separator />
             <MenuItem x:Name="BtnExit" Header="_Exit" InputGestureText="Ctrl+E" Click="BtnExitFile_Click"/>
         </MenuItem>
+        <!--<MenuItem x:Name="BtnAutoLayout" Header="_Auto-Layout" InputGestureText="Ctrl+A" Click="BtnAutoLayout_Click"/>-->
     </Menu>
 </UserControl>

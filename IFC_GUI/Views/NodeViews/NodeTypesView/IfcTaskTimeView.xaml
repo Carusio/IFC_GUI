@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="IFC_GUI.Views.NodeViews.NodeTypesView.IfcTaskTimeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IFC_GUI.Views.NodeViews.NodeTypesView"
+        
+        
+        mc:Ignorable="d"
+        Height="500" Width="300" ForceCursor="True">
+    <!--Title="IfcTaskTime attributes" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner"-->    <!--Background="LightGray"-->
+
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="{Binding Background}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Grid.Column="0" Grid.Row="0">Name:</TextBlock>
+            <TextBox x:Name="nameTextBox" Grid.Column="2" Grid.Row="0" MinWidth="150" Margin="0,0,0,5"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="1">DataOrigin:</TextBlock>
+            <ComboBox x:Name="dataOriginComboBox" Grid.Column="2" Grid.Row="1" MinWidth="150" Margin="0,0,0,5">
+                <ComboBoxItem>Measured</ComboBoxItem>
+                <ComboBoxItem>Predicted</ComboBoxItem>
+                <ComboBoxItem>Simulated</ComboBoxItem>
+                <ComboBoxItem>User defined</ComboBoxItem>
+                <ComboBoxItem>Not defined</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Column="0" Grid.Row="2">UserDefinedDataOrigin:</TextBlock>
+            <TextBox x:Name="userDefinedDataOriginTextBox" Grid.Column="2" Grid.Row="2" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="3">DurationType:</TextBlock>
+            <ComboBox x:Name="durationTypeComboBox" Grid.Column="2" Grid.Row="3" Margin="0,0,0,5" MinWidth="150">
+                <ComboBoxItem>Elapsed time</ComboBoxItem>
+                <ComboBoxItem>Worktime</ComboBoxItem>
+                <ComboBoxItem>Not defined</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Column="0" Grid.Row="4">ScheduleDuration:</TextBlock>
+            <TextBox x:Name="scheduleDurationTextBox" Grid.Column="2" Grid.Row="4" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="5">ScheduleStart:</TextBlock>
+            <TextBox x:Name="scheduleStartTextBox" Grid.Column="2" Grid.Row="5" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="6">ScheduleFinish:</TextBlock>
+            <TextBox x:Name="scheduleFinishTextBox" Grid.Column="2" Grid.Row="6" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="7">EarlyStart:</TextBlock>
+            <TextBox x:Name="earlyStartTextBox" Grid.Column="2" Grid.Row="7" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="8">EarlyFinish:</TextBlock>
+            <TextBox x:Name="earlyFinishTextBox" Grid.Column="2" Grid.Row="8" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="9">LateStart:</TextBlock>
+            <TextBox x:Name="lateStartTextBox" Grid.Column="2" Grid.Row="9" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="10">LateFinish:</TextBlock>
+            <TextBox x:Name="lateFinishTextBox" Grid.Column="2" Grid.Row="10" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="11">FreeFloat:</TextBlock>
+            <TextBox x:Name="freeFloatTextBox" Grid.Column="2" Grid.Row="11" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="12">TotalFloat:</TextBlock>
+            <TextBox x:Name="totalFloatTextBox" Grid.Column="2" Grid.Row="12" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="13">IsCritical:</TextBlock>
+            <CheckBox x:Name="isCriticalCheckBox" Grid.Column="2" Grid.Row="13" HorizontalAlignment="Center" Margin="0,0,0,5"></CheckBox>
+            <TextBlock Grid.Column="0" Grid.Row="14">StatusTime:</TextBlock>
+            <TextBox x:Name="statusTimeTextBox" Grid.Column="2" Grid.Row="14" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="15">ActualDuration:</TextBlock>
+            <TextBox x:Name="actualDurationTextBox" Grid.Column="2" Grid.Row="15" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="16">ActualStart:</TextBlock>
+            <TextBox x:Name="actualStartTextBox" Grid.Column="2" Grid.Row="16" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="17">ActualFinish:</TextBlock>
+            <TextBox x:Name="actualFinishTextBox" Grid.Column="2" Grid.Row="17" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="18">RemainingTime:</TextBlock>
+            <TextBox x:Name="remainingTimeTextBox" Grid.Column="2" Grid.Row="18" Margin="0,0,0,5" MinWidth="150"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="19">Completion:</TextBlock>
+            <TextBox x:Name="completionTextBox" Grid.Column="2" Grid.Row="19" Margin="0,0,0,5" MinWidth="150"></TextBox>
+
+
+            <WrapPanel Grid.Row="21" Grid.ColumnSpan="3" HorizontalAlignment="Right">
+                <Button x:Name="okButton" Click="okButton_Click" MinWidth="60" Margin="0,0,10,0">_Ok</Button>
+                <Button x:Name="cancelButton" Click="cancelButton_Click" MinWidth="60">_Cancel</Button>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+    
+ 
+</UserControl>

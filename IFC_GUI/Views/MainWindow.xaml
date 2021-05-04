@@ -7,15 +7,16 @@
         
         xmlns:nodenetwork="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"        
         xmlns:views="clr-namespace:IFC_GUI.Views"
+        xmlns:viewsTaskTime="clr-namespace:IFC_GUI.Views.NodeViews.NodeTypesView"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900">
+        Title="Ifc Node Editor" Height="600" Width="900">
     <Window.Resources>
         <ContextMenu x:Key="nodeMenu" x:Shared="True">
             <MenuItem x:Name="showSubNetworkButton" Header="Show subnetwork"/>
         </ContextMenu>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -25,6 +26,8 @@
         </Grid.RowDefinitions>
 
         <views:MenuBarView x:Name="menuBarView" Grid.Row="0"/>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="0" Name="autoLayoutButton">Auto-Layout</Button>
+
         <views:BreadcrumbBarView x:Name="breadcrumbBarView" Grid.Row="1" Grid.ColumnSpan="5" MinHeight="30"/>
 
         <nodenetwork:NetworkView x:Name="networkView" Grid.Row="2">
@@ -35,8 +38,14 @@
             </nodenetwork:NetworkView.Resources>
         </nodenetwork:NetworkView>
 
+        <!-- <viewsTaskTime:IfcTaskTimeView x:Name="taskTimeView" Grid.Row="2"></viewsTaskTime:IfcTaskTimeView> -->
+
+        <ContentControl x:Name="ContentControlPopup" Grid.Row="2"></ContentControl>
+
         <views:NodeListView x:Name="nodeListView" Grid.Row="3"/>
 
 
     </Grid>
+
+
 </Window>

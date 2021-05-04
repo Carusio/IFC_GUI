@@ -109,3 +109,5 @@ C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\Node
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\IfcOutputView.g.cs
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\IfcInputView.baml
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\IfcOutputView.baml
+C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\NodeTypesView\IfcTaskTimeView.g.cs
+C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\NodeTypesView\IfcTaskTimeView.baml

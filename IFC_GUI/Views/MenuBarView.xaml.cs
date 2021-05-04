@@ -49,6 +49,13 @@ namespace IFC_GUI.Views
         public MenuBarView()
         {
             InitializeComponent();
+
+            //var a = ((MainWindowView)Window.GetWindow(this)).ViewModel;
+
+            /*this.WhenActivated(d =>
+            {
+                this.BindCommand(ViewModel, vm => vm.AutoLayout, v => v.BtnAutoLayout);
+            });*/
         }
 
         private void BtnNewFile_Click(object sender, RoutedEventArgs e)
@@ -59,12 +66,18 @@ namespace IFC_GUI.Views
         private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "All files (*.*)|*.*|Ifc file (*.ifc)|*.ifc|Zip file (*.ifczip)|*.ifczip|Xml file (*.ifcxml)|*.ifcxml|Xbim file (*.xbim)|*.xbim";
             bool? ok = openFileDialog.ShowDialog();
 
+            // check if the type of the selected file is supported
             if (ok != true || !IfcDataHandling.CheckFileExtension(openFileDialog.FileName))  // TODO: check if ifc file or others (ifcxml? ...)
             {
+                MessageBox.Show("file type not supported");
                 return;
             }
+
+            // clear the MainWindow before loading and visualizing new data
+            ((MainWindowView)Window.GetWindow(this)).ViewModel = new MainWindowViewModel();
 
             MainWindowView mw = (MainWindowView)Window.GetWindow(this);
 
@@ -76,62 +89,21 @@ namespace IFC_GUI.Views
             mw.ViewModel.globalAllTaskModels = alltaskModels;
 
             IfcDataHandling.RecursiveNestingTaskModelToTaskNode(alltaskModels, mw.ViewModel.NetworkBreadcrumbBar, (NetworkBreadcrumb)mw.ViewModel.NetworkBreadcrumbBar.ActivePath.Items.First(), "", false);
-
-            /*foreach (TaskModel tm in alltaskModels)
-            {
-                IfcTaskNodeViewModel tn = new IfcTaskNodeViewModel(tm);
-
-                if (!tm.IsNestedBy.Any())
-                {
-                    // All nodes which are not part of a nest
-                    mw.ViewModel.Network.Nodes.Add(tn);
-
-
-
-                    var subnetworkbreadcrumb = new NetworkBreadcrumb
-                    {
-                        Name = tm.Name,
-                        Network = new NetworkViewModel()
-                    };
-                    subnetworkbreadcrumb.Network.Nodes.Add(tn);
-
-                    mw.ViewModel.NetworkBreadcrumbBar.ActivePath.Add(subnetworkbreadcrumb);
-                }
-                else {  }
-
-                //mw.ViewModel.Network.Nodes.Add(tn);
-                taskNodes.Add(tn);
-
-                if (tm.IsSuccessorFrom.Any())
-                {
-                    foreach (var guid in tm.IsSuccessorFrom)
-                    {
-                        foreach (var node in taskNodes)
-                        {
-                            if (node.TaskModel.GlobalId == guid)
-                            {
-                                var connection = new IfcConnectionViewModel(mw.ViewModel.Network, tn.Input, node.Output);
-                                mw.ViewModel.Network.Connections.Add(connection);
-                            }
-                        }
-                    }
-                }
-            }*/
         }
+
         private void BtnSaveFile_Click(object sender, RoutedEventArgs e)
-        {
-            //List<TaskModel> allTaskModels = new List<TaskModel>();
+        {            
 
             MainWindowView mw = (MainWindowView)Window.GetWindow(this);
 
-            /*var allTaskNodes = mw.ViewModel.Network.Nodes.Items.OfType<IfcTaskNodeViewModel>();
+            // force focus on network, so the markup binding triggers and the last change of an attribute is registered
+            mw.networkView.Focus();
 
-            foreach (var tasknode in allTaskNodes)
+            if (!(mw.ViewModel.globalFileName == null))
             {
-                allTaskModels.Add(tasknode.TaskModel);
-            }*/
-
-            IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels);
+                IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.globalFileName));
+                MessageBox.Show("File saved.");
+            }
 
             /*
             // TODO: save should only save an existing file
@@ -154,19 +126,55 @@ namespace IFC_GUI.Views
         {
             MainWindowView mw = (MainWindowView)Window.GetWindow(this);
 
+            // force focus on network, so the markup binding triggers and the last change of an attribute is registered
+            mw.networkView.Focus();
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            if (saveFileDialog.ShowDialog() == true) 
-                if (File.Exists(saveFileDialog.FileName))
+            saveFileDialog.Filter = "All files (*.*)|*.*|Ifc file (*.ifc)|*.ifc|Zip file (*.ifczip)|*.ifczip|Xml file (*.ifcxml)|*.ifcxml|Xbim file (*.xbim)|*.xbim";
+            saveFileDialog.DefaultExt = ".ifc";
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.AddExtension = true;
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string wantedFileExtension = System.IO.Path.GetExtension(saveFileDialog.FileName);
+                string filePathWithoutExtension = System.IO.Path.ChangeExtension(saveFileDialog.FileName, null);
+                string globalFileExtension = System.IO.Path.GetExtension(mw.ViewModel.globalFileName);
+                string globalFilePathWithoutExtension = System.IO.Path.ChangeExtension(mw.ViewModel.globalFileName, null);
+
+                if (File.Exists(saveFileDialog.FileName) && saveFileDialog.FileName == mw.ViewModel.globalFileName)
                 {
-                    IfcDataHandling.UpdateIfcData(saveFileDialog.FileName, mw.ViewModel.globalAllTaskModels);
-                    MessageBox.Show("File saved");
+                    IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.globalFileName));
+                    MessageBox.Show("File overwritten.");
+                    /*MessageBoxResult result = MessageBox.Show("The file already exists. Do you want to override it?", "SaveAs", MessageBoxButton.YesNoCancel);
+                    switch (result)
+                    {
+                        case MessageBoxResult.Yes:
+                            IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels);
+                            MessageBox.Show("File saved.");
+                            break;
+                        case MessageBoxResult.No:
+                            MessageBox.Show("No file was saved.");
+                            break;
+                        case MessageBoxResult.Cancel:
+                            MessageBox.Show("No file was saved.");
+                            break;
+                    }*/
+                }
+                // convert existing ifcproject to other format
+                else if (/*!File.Exists(saveFileDialog.FileName) &&*/ filePathWithoutExtension == globalFilePathWithoutExtension && wantedFileExtension != globalFileExtension)
+                {
+                    IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, wantedFileExtension);
+                    mw.ViewModel.globalFileName = saveFileDialog.FileName;
+                    MessageBox.Show("File saved in other format.");
                 }
                 else
                 {
-                    IfcDataHandling.NewIfcData(saveFileDialog.FileName, mw.ViewModel.globalAllTaskModels);
-                    MessageBox.Show("New File saved");
+                    mw.ViewModel.globalFileName = saveFileDialog.FileName;
+                    IfcDataHandling.NewIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels);
+                    MessageBox.Show("New File saved.");
                 }
-
+            }
         }
         private void BtnExitFile_Click(object sender, RoutedEventArgs e)
         {

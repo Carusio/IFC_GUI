@@ -25,7 +25,6 @@ namespace IFC_GUI.ViewModels.NodeViewModels.NodeTypes
         public IfcInputViewModel Input { get; }
         public IfcOutputViewModel Output { get; }
 
-
         private TaskModel _taskModel;
         public TaskModel TaskModel 
         { get => _taskModel;
@@ -37,7 +36,7 @@ namespace IFC_GUI.ViewModels.NodeViewModels.NodeTypes
             this.Name = "Task_Node";
             this.Resizable = ResizeOrientation.HorizontalAndVertical;
             this.TaskModel = new TaskModel();
-                        
+
             Input = new IfcInputViewModel(PortType.None)
             {
                 Name = "IsSuccessorFrom"

@@ -11,33 +11,36 @@ namespace IFC_GUI.Models
     {
         // IfcSchedulingTime attributes
         public string Name { get; set; }
-        public string DataOrigin { get; set; }
+        public int DataOrigin { get; set; }
         public string UserDefinedDataOrigin { get; set; }
 
         // IfcTasktTime attributes
-        public string DurationType { get; set; }
-        public string ScheduleDuration { get; set; }
-        public string ScheduleStart { get; set; }
-        public string ScheduleFinish { get; set; }
-        public string EarlyStart { get; set; }
-        public string EarlyFinish { get; set; }
-        public string LateStart { get; set; }
-        public string LateFinish { get; set; }
-        public string FreeFloat { get; set; }
-        public string TotalFloat { get; set; }
+        public int DurationType { get; set; }
+        public string ScheduleDuration { get; set; } // PnYnMnDTnHnMnS, where nY represents the number of years, nM the number of months, nD the number of days, 
+                                                     // 'T' is the date/time separator, nH the number of hours, nM the number of minutes and nS the number of seconds
+        // the next attributes should be in Format
+        //YYYY-MM-DDThh:mm:ss where "YYYY" represent the year, "MM" the month and "DD" the day, preceded by an optional leading "-" sign to indicate a negative year number
+        public string ScheduleStart { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string ScheduleFinish { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string EarlyStart { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string EarlyFinish { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string LateStart { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string LateFinish { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string FreeFloat { get; set; } // PnYnMnDTnHnMnS
+        public string TotalFloat { get; set; } // PnYnMnDTnHnMnS
         public bool IsCritical { get; set; }
-        public string StatusTime { get; set; }
-        public string ActualDuration { get; set; }
-        public string ActualStart { get; set; }
-        public string ActualFinish { get; set; }
-        public string RemainingTime { get; set; }
+        public string StatusTime { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string ActualDuration { get; set; } // PnYnMnDTnHnMnS
+        public string ActualStart { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string ActualFinish { get; set; } //YYYY-MM-DDThh:mm:ss
+        public string RemainingTime { get; set; } // PnYnMnDTnHnMnS
         public string Completion { get; set; }
         public TaskTimeModel()
         {
             
         }
 
-        public TaskTimeModel(string name, string dataorigin, string userdefineddataorigin, string durationtype, string scheduleduration, string schedulestart, string schedulefinish, string earlystart, string earlyfinish, string latestart, string latefinish,
+        public TaskTimeModel(string name, int dataorigin, string userdefineddataorigin, int durationtype, string scheduleduration, string schedulestart, string schedulefinish, string earlystart, string earlyfinish, string latestart, string latefinish,
             string freefloat, string totalfloat, bool iscritical, string statustime, string actualduration, string actualstart, string actualfinish, string remainingtime, string completion)
         {
             Name = name;

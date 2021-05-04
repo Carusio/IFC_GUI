@@ -18,7 +18,7 @@ namespace IFC_GUI.Models
         public bool IsMilestone { get; set; }
         public string Priority { get; set; }
         // TaskTime could be another datatype
-        public string TaskTime { get; set; }
+        public TaskTimeModel TaskTime { get; set; } = new TaskTimeModel();
         public int PredefinedType { get; set; }
 
         //Relationship attributes - sequential
@@ -47,8 +47,8 @@ namespace IFC_GUI.Models
         }
 
         public TaskModel(string globalid, string name, string description, string objecttype, string identification, string longdescription, string status,
-            string workmethod, bool ismilestone, string priority, string tasktime, string predefinedtype, List<string> nests, List<string> isnestedby, List<string> ispredecessorto, List<string> issuccessorfrom) :
-            base(globalid, name, description, objecttype, nests, isnestedby)
+            string workmethod, bool ismilestone, string priority, TaskTimeModel tasktime, string predefinedtype, List<string> isnestedby, List<string> nests, List<string> ispredecessorto, List<string> issuccessorfrom) :
+            base(globalid, name, description, objecttype, isnestedby, nests)
         {
             Identification = identification;
             LongDescription = longdescription;
