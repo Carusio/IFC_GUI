@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\
+C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\obj\Debug\
 IFC_GUI
 none
 false
 DEBUG;TRACE
-C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\App.xaml
+C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\App.xaml
 121554809146
 
 38-401946840
-55-1622324327
+55852487949
 Views\BreadcrumbBarView.xaml;Views\MainWindow.xaml;Views\MenuBarView.xaml;Views\NodeListView.xaml;Views\NodeViews\IfcConnectionView.xaml;Views\NodeViews\IfcInputView.xaml;Views\NodeViews\IfcNodeView.xaml;Views\NodeViews\IfcOutputView.xaml;Views\NodeViews\IfcPendingConnectionView.xaml;Views\NodeViews\IfcPortView.xaml;Views\NodeViews\NodeTypesView\IfcTaskNodeView.xaml;Views\NodeViews\NodeTypesView\IfcTaskTimeView.xaml;
 
 False

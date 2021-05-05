@@ -108,10 +108,10 @@ namespace IFC_GUI.DataAccess
                     if (currentTask.TaskTime != null)
                     {
                         var ifcTaskTimeOfCurrentTask = currentTask.TaskTime;
-                        taskTimeModelOfCurrentTask = new TaskTimeModel(ifcTaskTimeOfCurrentTask.Name, (int)ifcTaskTimeOfCurrentTask.DataOrigin, ifcTaskTimeOfCurrentTask.UserDefinedDataOrigin, (int)ifcTaskTimeOfCurrentTask.DurationType, 
-                            ifcTaskTimeOfCurrentTask.ScheduleDuration, ifcTaskTimeOfCurrentTask.ScheduleStart, ifcTaskTimeOfCurrentTask.ScheduleFinish, ifcTaskTimeOfCurrentTask.EarlyStart, ifcTaskTimeOfCurrentTask.EarlyFinish, 
-                            ifcTaskTimeOfCurrentTask.LateStart, ifcTaskTimeOfCurrentTask.LateFinish, ifcTaskTimeOfCurrentTask.FreeFloat, ifcTaskTimeOfCurrentTask.TotalFloat, (bool)ifcTaskTimeOfCurrentTask.IsCritical, 
-                            ifcTaskTimeOfCurrentTask.StatusTime, ifcTaskTimeOfCurrentTask.ActualDuration, ifcTaskTimeOfCurrentTask.ActualStart, ifcTaskTimeOfCurrentTask.ActualFinish, ifcTaskTimeOfCurrentTask.RemainingTime,
+                        taskTimeModelOfCurrentTask = new TaskTimeModel(ifcTaskTimeOfCurrentTask.Name, ifcTaskTimeOfCurrentTask.DataOrigin.ToString(), ifcTaskTimeOfCurrentTask.UserDefinedDataOrigin, ifcTaskTimeOfCurrentTask.DurationType.ToString(), 
+                            ifcTaskTimeOfCurrentTask.ScheduleDuration.ToString(), ifcTaskTimeOfCurrentTask.ScheduleStart.ToString(), ifcTaskTimeOfCurrentTask.ScheduleFinish.ToString(), ifcTaskTimeOfCurrentTask.EarlyStart.ToString(), ifcTaskTimeOfCurrentTask.EarlyFinish.ToString(), 
+                            ifcTaskTimeOfCurrentTask.LateStart.ToString(), ifcTaskTimeOfCurrentTask.LateFinish.ToString(), ifcTaskTimeOfCurrentTask.FreeFloat.ToString(), ifcTaskTimeOfCurrentTask.TotalFloat.ToString(), ifcTaskTimeOfCurrentTask.IsCritical.ToString(), 
+                            ifcTaskTimeOfCurrentTask.StatusTime.ToString(), ifcTaskTimeOfCurrentTask.ActualDuration.ToString(), ifcTaskTimeOfCurrentTask.ActualStart.ToString(), ifcTaskTimeOfCurrentTask.ActualFinish.ToString(), ifcTaskTimeOfCurrentTask.RemainingTime.ToString(),
                             ifcTaskTimeOfCurrentTask.Completion.ToString());
                     }
                     else

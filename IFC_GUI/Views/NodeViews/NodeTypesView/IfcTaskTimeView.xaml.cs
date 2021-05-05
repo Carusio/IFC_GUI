@@ -58,7 +58,7 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
                 this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.LateFinish, v => v.lateFinishTextBox.Text);
                 this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.FreeFloat, v => v.freeFloatTextBox.Text);
                 this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.TotalFloat, v => v.totalFloatTextBox.Text);
-                this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.IsCritical, v => v.isCriticalCheckBox.IsChecked);
+                this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.IsCritical, v => v.isCriticalCheckBox.IsChecked.Value);
                 this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.StatusTime, v => v.statusTimeTextBox.Text);
                 this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.ActualDuration, v => v.actualDurationTextBox.Text);
                 this.OneWayBind(ViewModel, vm => vm.TaskTimeModel.ActualStart, v => v.actualStartTextBox.Text);
@@ -87,7 +87,7 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
             this.ViewModel.TaskTimeModel.LateFinish = this.lateFinishTextBox.Text;
             this.ViewModel.TaskTimeModel.FreeFloat = this.freeFloatTextBox.Text;
             this.ViewModel.TaskTimeModel.TotalFloat = this.totalFloatTextBox.Text;
-            this.ViewModel.TaskTimeModel.IsCritical = (bool)this.isCriticalCheckBox.IsChecked;
+            this.ViewModel.TaskTimeModel.IsCritical = this.isCriticalCheckBox.IsChecked.Value;
             this.ViewModel.TaskTimeModel.StatusTime = this.statusTimeTextBox.Text;
             this.ViewModel.TaskTimeModel.ActualDuration = this.actualDurationTextBox.Text;
             this.ViewModel.TaskTimeModel.ActualStart = this.actualStartTextBox.Text;

@@ -40,13 +40,49 @@ namespace IFC_GUI.Models
             
         }
 
-        public TaskTimeModel(string name, int dataorigin, string userdefineddataorigin, int durationtype, string scheduleduration, string schedulestart, string schedulefinish, string earlystart, string earlyfinish, string latestart, string latefinish,
-            string freefloat, string totalfloat, bool iscritical, string statustime, string actualduration, string actualstart, string actualfinish, string remainingtime, string completion)
+        public TaskTimeModel(string name, string dataorigin, string userdefineddataorigin, string durationtype, string scheduleduration, string schedulestart, string schedulefinish, string earlystart, string earlyfinish, string latestart, string latefinish,
+            string freefloat, string totalfloat, string iscritical, string statustime, string actualduration, string actualstart, string actualfinish, string remainingtime, string completion)
         {
             Name = name;
-            DataOrigin = dataorigin;
+            switch (dataorigin)
+            {
+                case "MEASURED":
+                    DataOrigin = 0;
+                    break;
+                case "PREDICTED":
+                    DataOrigin = 1;
+                    break;
+                case "SIMULATED":
+                    DataOrigin = 2;
+                    break;
+                case "USERDEFINED":
+                    DataOrigin = 3;
+                    break;
+                case "NOTEDEFINED":
+                    DataOrigin = 4;
+                    break;
+                default:
+                    DataOrigin = -1;
+                    break;
+            }
+
             UserDefinedDataOrigin = userdefineddataorigin;
-            DurationType = durationtype;
+
+            switch (durationtype)
+            {
+                case "ELAPSEDTIME":
+                    DataOrigin = 0;
+                    break;
+                case "WORKTIME":
+                    DataOrigin = 1;
+                    break;
+                case "NOTDEFINED":
+                    DataOrigin = 2;
+                    break;
+                default:
+                    DurationType = -1;
+                    break;
+            }
             ScheduleDuration = scheduleduration;
             ScheduleStart = schedulestart;
             ScheduleFinish = schedulefinish;
@@ -56,7 +92,19 @@ namespace IFC_GUI.Models
             LateFinish = latefinish;
             FreeFloat = freefloat;
             TotalFloat = totalfloat;
-            IsCritical = iscritical;
+
+            switch (iscritical)
+            {
+                case "TRUE":
+                    IsCritical = true;
+                    break;
+                case "FALSE":
+                    IsCritical = false;
+                    break;
+                default:
+                    IsCritical = false;
+                    break;
+            }
             StatusTime = statustime;
             ActualDuration = actualduration;
             ActualStart = actualstart;
