@@ -72,6 +72,7 @@ namespace IFC_GUI.Views
         #endregion
 
         public CollectionViewSource CVS { get; } = new CollectionViewSource();
+
         public NodeListView()
         {
             InitializeComponent();

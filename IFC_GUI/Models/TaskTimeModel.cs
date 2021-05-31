@@ -16,10 +16,10 @@ namespace IFC_GUI.Models
 
         // IfcTasktTime attributes
         public int DurationType { get; set; }
-        public string ScheduleDuration { get; set; } // PnYnMnDTnHnMnS, where nY represents the number of years, nM the number of months, nD the number of days, 
-                                                     // 'T' is the date/time separator, nH the number of hours, nM the number of minutes and nS the number of seconds
-        // the next attributes should be in Format
-        //YYYY-MM-DDThh:mm:ss where "YYYY" represent the year, "MM" the month and "DD" the day, preceded by an optional leading "-" sign to indicate a negative year number
+        // PnYnMnDTnHnMnS, where nY represents the number of years, nM the number of months, nD the number of days, 
+        // 'T' is the date/time separator, nH the number of hours, nM the number of minutes and nS the number of seconds
+        public string ScheduleDuration { get; set; }
+        // the next attributes should be in Format YYYY-MM-DDThh:mm:ss where "YYYY" represent the year, "MM" the month and "DD" the day, preceded by an optional leading "-" sign to indicate a negative year number
         public string ScheduleStart { get; set; } //YYYY-MM-DDThh:mm:ss
         public string ScheduleFinish { get; set; } //YYYY-MM-DDThh:mm:ss
         public string EarlyStart { get; set; } //YYYY-MM-DDThh:mm:ss
@@ -35,18 +35,56 @@ namespace IFC_GUI.Models
         public string ActualFinish { get; set; } //YYYY-MM-DDThh:mm:ss
         public string RemainingTime { get; set; } // PnYnMnDTnHnMnS
         public string Completion { get; set; }
+
         public TaskTimeModel()
         {
-            
+            // this forces the Comboboxes in the view to show the empty default view
+            DataOrigin = -1;
+            DurationType = -1;
         }
 
-        public TaskTimeModel(string name, int dataorigin, string userdefineddataorigin, int durationtype, string scheduleduration, string schedulestart, string schedulefinish, string earlystart, string earlyfinish, string latestart, string latefinish,
-            string freefloat, string totalfloat, bool iscritical, string statustime, string actualduration, string actualstart, string actualfinish, string remainingtime, string completion)
+        public TaskTimeModel(string name, string dataorigin, string userdefineddataorigin, string durationtype, string scheduleduration, string schedulestart, string schedulefinish, string earlystart, string earlyfinish, string latestart, string latefinish,
+            string freefloat, string totalfloat, string iscritical, string statustime, string actualduration, string actualstart, string actualfinish, string remainingtime, string completion)
         {
             Name = name;
-            DataOrigin = dataorigin;
+            switch (dataorigin)
+            {
+                case "MEASURED":
+                    DataOrigin = 0;
+                    break;
+                case "PREDICTED":
+                    DataOrigin = 1;
+                    break;
+                case "SIMULATED":
+                    DataOrigin = 2;
+                    break;
+                case "USERDEFINED":
+                    DataOrigin = 3;
+                    break;
+                case "NOTEDEFINED":
+                    DataOrigin = 4;
+                    break;
+                default:
+                    DataOrigin = -1;
+                    break;
+            }
+
             UserDefinedDataOrigin = userdefineddataorigin;
-            DurationType = durationtype;
+            switch (durationtype)
+            {
+                case "ELAPSEDTIME":
+                    DurationType = 0;
+                    break;
+                case "WORKTIME":
+                    DurationType = 1;
+                    break;
+                case "NOTDEFINED":
+                    DurationType = 2;
+                    break;
+                default:
+                    DurationType = -1;
+                    break;
+            }
             ScheduleDuration = scheduleduration;
             ScheduleStart = schedulestart;
             ScheduleFinish = schedulefinish;
@@ -56,7 +94,19 @@ namespace IFC_GUI.Models
             LateFinish = latefinish;
             FreeFloat = freefloat;
             TotalFloat = totalfloat;
-            IsCritical = iscritical;
+
+            switch (iscritical)
+            {
+                case "TRUE":
+                    IsCritical = true;
+                    break;
+                case "FALSE":
+                    IsCritical = false;
+                    break;
+                default:
+                    IsCritical = false;
+                    break;
+            }
             StatusTime = statustime;
             ActualDuration = actualduration;
             ActualStart = actualstart;
@@ -64,5 +114,5 @@ namespace IFC_GUI.Models
             RemainingTime = remainingtime;
             Completion = completion;
         }
-    }
+    } 
 }

@@ -1,5 +1,4 @@
-﻿using IFC_GUI.ViewModels.Toolkit.Layout;
-using ReactiveUI;
+﻿using ReactiveUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +10,7 @@ namespace IFC_GUI.ViewModels
 {
     public class MenuBarViewModel : ReactiveObject
     {
+        // MenuBarView stores the methods in code-behind
         public MenuBarViewModel()
         {
 

@@ -9,7 +9,9 @@
                           
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
+    
     <UserControl.Resources>
+        <!-- a style of a rounded plus button-->
         <Style TargetType="Button" x:Key="RoundedPlusButton">
             <Setter Property="Background" Value="LightGray"/>
             <Setter Property="Width" Value="20"/>
@@ -41,12 +43,12 @@
                 <Setter Property="ContentTemplate">
                     <Setter.Value>
                         <DataTemplate DataType="nodetypes:IfcTaskViewModel">
-                            <!-- fix width enables resizing the node by user-->
-                            <Grid Width="280">
+                            <!-- static width enables resizing the node by user-->
+                            <Grid Width="Auto">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="2"/>
-                                    <RowDefinition Height="*"/>
+                                    <!--<RowDefinition Height="2"/>-->
+                                    <!--<RowDefinition Height="*"/>-->
                                 </Grid.RowDefinitions>
 
                                 <Grid Grid.Row="0">
@@ -83,17 +85,17 @@
                                     <TextBlock Grid.Row="5" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Identification:</TextBlock>
                                     <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="identificationTextBox" Text="{Binding TaskModel.Identification}"></TextBox>
                                     <TextBlock Grid.Row="6" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">LongDescription:</TextBlock>
-                                    <TextBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" Width="150" FontSize="10" x:Name="longdescriptionTextBox" Text="{Binding TaskModel.LongDescription}"></TextBox>
+                                    <TextBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="longdescriptionTextBox" Text="{Binding TaskModel.LongDescription}"></TextBox>
                                     <TextBlock Grid.Row="7" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Status:</TextBlock>
-                                    <TextBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" Width="150" FontSize="10" x:Name="statusTextBox" Text="{Binding TaskModel.Status}"></TextBox>
+                                    <TextBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="statusTextBox" Text="{Binding TaskModel.Status}"></TextBox>
                                     <TextBlock Grid.Row="8" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">WorkMethod:</TextBlock>
                                     <TextBox Grid.Row="8" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="workmethodTextBox" Text="{Binding TaskModel.WorkMethod}"></TextBox>
                                     <TextBlock Grid.Row="9" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">IsMilestone:</TextBlock>
-                                    <CheckBox Grid.Row="9" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,70,0" x:Name="ismilstoneCheckBox" Content="{Binding TaskModel.IsMilestone}"></CheckBox>
+                                    <CheckBox Grid.Row="9" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,70,0" x:Name="ismilstoneCheckBox" IsChecked="{Binding TaskModel.IsMilestone}"></CheckBox>
                                     <TextBlock Grid.Row="10" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Priority:</TextBlock>
-                                    <TextBox Grid.Row="10" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="priorityTextBox" Text="{Binding TaskModel.Priority}"></TextBox>
+                                    <TextBox Grid.Row="10" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="priorityTextBox" PreviewTextInput="PriorityTextBox_PreviewTextInput" Text="{Binding TaskModel.Priority}"></TextBox>
                                     <TextBlock Grid.Row="11" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">TaskTime:</TextBlock>
-                                    <Button Grid.Row="11" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="9" x:Name="tasktimeButton" Click="tasktimeButton_Click">Open TaskTime Properties</Button>
+                                    <Button Grid.Row="11" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="9" x:Name="tasktimeButton" Click="TasktimeButton_Click">Open TaskTime Properties</Button>
                                     <TextBlock Grid.Row="12" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">PredefinedType:</TextBlock>
                                     <ComboBox Grid.Row="12" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="9" x:Name="predefinedtypeComboBox" Text="{Binding TaskModel.PredefinedType}" >
                                         <ComboBoxItem>Attendance</ComboBoxItem>
@@ -113,7 +115,8 @@
                                     </ComboBox>
                                 </Grid>
 
-                                <Grid Grid.Row="1">
+                                <!-- Seperator -->
+                                <!--<Grid Grid.Row="1">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="2"/>
                                     </Grid.RowDefinitions>
@@ -135,7 +138,7 @@
                                     <TextBox Grid.Row="2" HorizontalAlignment="Left" Height="15" MinWidth="120" Margin="15,0,130,0"></TextBox>
                                     <TextBox Grid.Row="2" HorizontalAlignment="Right" Margin="130,0,5,0" Height="15" MinWidth="120"></TextBox>
                                     <Button Grid.Row="3" Style="{StaticResource RoundedPlusButton}"/>
-                                </Grid>
+                                </Grid>-->
                             </Grid>
                         </DataTemplate>
                     </Setter.Value>

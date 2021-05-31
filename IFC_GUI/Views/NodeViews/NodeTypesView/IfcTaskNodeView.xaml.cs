@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,7 +44,6 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
         public IfcTaskNodeView()
         {
             InitializeComponent();
-
             this.WhenActivated(d =>
             {
                 this.WhenAnyValue(v => v.ViewModel).BindTo(this, v => v.IfcTaskView.ViewModel).DisposeWith(d);
@@ -53,7 +53,7 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
             });
         }
 
-        private void tasktimeButton_Click(object sender, RoutedEventArgs e)
+        private void TasktimeButton_Click(object sender, RoutedEventArgs e)
         {
             //this.ViewModel.IfcTaskTimeViewModelToMainWindow();
             /*var w2 = new IfcTaskTimeView();
@@ -65,8 +65,17 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
             // mw.ViewModel.TaskTimeWindow = new IfcTaskTimeViewModel();
 
 
-            var timeView = new IfcTaskTimeView();
+            //var timeView = new IfcTaskTimeView();
 
+            var tasktimewindow = new TaskTimeV
+            {
+                Owner = mw,
+                Title = $"TaskTime of {this.ViewModel.TaskModel.Name}"
+            };
+
+            tasktimewindow.ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
+
+            tasktimewindow.Show();
             /*Window window = new Window
             {
                 Title = "TaskTime properties",
@@ -76,17 +85,25 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
             };
             window.ShowDialog();*/
 
-            mw.ContentControlPopup.Content = timeView;
+            //mw.ContentControlPopup.Content = timeView;
 
 
             
             // würde mit manuellen binding funktionieren
             //((IfcTaskTimeView)window.Content).ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
-            timeView.ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
+            
+            
+            //timeView.ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
 
 
 
             // timeView.ViewModel.TaskTimeModel.Name = this.ViewModel.TaskModel.TaskTime.Name;
+        }
+
+        private void PriorityTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

@@ -1,27 +1,12 @@
-﻿using DynamicData;
-using IFC_GUI.DataAccess;
-using IFC_GUI.Models;
+﻿using IFC_GUI.DataAccess;
 using IFC_GUI.ViewModels;
-using IFC_GUI.ViewModels.NodeViewModels;
-using IFC_GUI.ViewModels.NodeViewModels.NodeTypes;
 using Microsoft.Win32;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace IFC_GUI.Views
 {
@@ -48,14 +33,7 @@ namespace IFC_GUI.Views
         #endregion
         public MenuBarView()
         {
-            InitializeComponent();
-
-            //var a = ((MainWindowView)Window.GetWindow(this)).ViewModel;
-
-            /*this.WhenActivated(d =>
-            {
-                this.BindCommand(ViewModel, vm => vm.AutoLayout, v => v.BtnAutoLayout);
-            });*/
+            InitializeComponent();            
         }
 
         private void BtnNewFile_Click(object sender, RoutedEventArgs e)
@@ -65,8 +43,11 @@ namespace IFC_GUI.Views
 
         private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "All files (*.*)|*.*|Ifc file (*.ifc)|*.ifc|Zip file (*.ifczip)|*.ifczip|Xml file (*.ifcxml)|*.ifcxml|Xbim file (*.xbim)|*.xbim";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "All files (*.*)|*.*|Ifc file (*.ifc)|*.ifc|Zip file (*.ifczip)|*.ifczip|Xml file (*.ifcxml)|*.ifcxml|Xbim file (*.xbim)|*.xbim"
+            };
+
             bool? ok = openFileDialog.ShowDialog();
 
             // check if the type of the selected file is supported
@@ -83,12 +64,15 @@ namespace IFC_GUI.Views
 
             mw.ViewModel.globalFileName = openFileDialog.FileName;
 
-            //no need for alltaskModels, input the globalAllTaskModels list in recursivenesting method
-            var alltaskModels = IfcDataHandling.OpenIfcData(openFileDialog.FileName);
-
-            mw.ViewModel.globalAllTaskModels = alltaskModels;
-
-            IfcDataHandling.RecursiveNestingTaskModelToTaskNode(alltaskModels, mw.ViewModel.NetworkBreadcrumbBar, (NetworkBreadcrumb)mw.ViewModel.NetworkBreadcrumbBar.ActivePath.Items.First(), "", false);
+            try
+            {
+                mw.ViewModel.globalAllTaskModels = IfcDataHandling.OpenIfcData(openFileDialog.FileName);
+                mw.ViewModel.GenerateTaskNodeForEachTaskModelOnCurrentLevel(mw.ViewModel.globalAllTaskModels, (NetworkBreadcrumb)mw.ViewModel.NetworkBreadcrumbBar.ActivePath.Items.First(), "");
+            }
+            catch (FileLoadException fle)
+            {
+                MessageBox.Show("File content corrupted.");
+            }
         }
 
         private void BtnSaveFile_Click(object sender, RoutedEventArgs e)
@@ -96,30 +80,17 @@ namespace IFC_GUI.Views
 
             MainWindowView mw = (MainWindowView)Window.GetWindow(this);
 
-            // force focus on network, so the markup binding triggers and the last change of an attribute is registered
+            // force focus on network, so the markup bindings trigger and the changes to the attributes in the GUI are registered
             mw.networkView.Focus();
 
             if (!(mw.ViewModel.globalFileName == null))
             {
                 IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.globalFileName));
                 MessageBox.Show("File saved.");
+            } else
+            {
+                BtnSaveAsFile_Click(sender, e);
             }
-
-            /*
-            // TODO: save should only save an existing file
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            if (saveFileDialog.ShowDialog() == true)
-                if (File.Exists(saveFileDialog.FileName))
-                {
-                    IfcDataHandling.UpdateIfcData(saveFileDialog.FileName, allTaskModels);
-                    MessageBox.Show("File saved");
-                }
-                else
-                {
-                    IfcDataHandling.NewIfcData(saveFileDialog.FileName, allTaskModels);
-                    MessageBox.Show("New File saved");
-                }
-            */
         }
 
         private void BtnSaveAsFile_Click(object sender, RoutedEventArgs e)
@@ -129,11 +100,13 @@ namespace IFC_GUI.Views
             // force focus on network, so the markup binding triggers and the last change of an attribute is registered
             mw.networkView.Focus();
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "All files (*.*)|*.*|Ifc file (*.ifc)|*.ifc|Zip file (*.ifczip)|*.ifczip|Xml file (*.ifcxml)|*.ifcxml|Xbim file (*.xbim)|*.xbim";
-            saveFileDialog.DefaultExt = ".ifc";
-            saveFileDialog.OverwritePrompt = true;
-            saveFileDialog.AddExtension = true;
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "All files (*.*)|*.*|Ifc file (*.ifc)|*.ifc|Zip file (*.ifczip)|*.ifczip|Xml file (*.ifcxml)|*.ifcxml|Xbim file (*.xbim)|*.xbim",
+                DefaultExt = ".ifc",
+                OverwritePrompt = true,
+                AddExtension = true
+            };
 
             if (saveFileDialog.ShowDialog() == true)
             {
@@ -142,32 +115,20 @@ namespace IFC_GUI.Views
                 string globalFileExtension = System.IO.Path.GetExtension(mw.ViewModel.globalFileName);
                 string globalFilePathWithoutExtension = System.IO.Path.ChangeExtension(mw.ViewModel.globalFileName, null);
 
+                // update existing ifc file
                 if (File.Exists(saveFileDialog.FileName) && saveFileDialog.FileName == mw.ViewModel.globalFileName)
                 {
                     IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.globalFileName));
-                    MessageBox.Show("File overwritten.");
-                    /*MessageBoxResult result = MessageBox.Show("The file already exists. Do you want to override it?", "SaveAs", MessageBoxButton.YesNoCancel);
-                    switch (result)
-                    {
-                        case MessageBoxResult.Yes:
-                            IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels);
-                            MessageBox.Show("File saved.");
-                            break;
-                        case MessageBoxResult.No:
-                            MessageBox.Show("No file was saved.");
-                            break;
-                        case MessageBoxResult.Cancel:
-                            MessageBox.Show("No file was saved.");
-                            break;
-                    }*/
+                    MessageBox.Show("File updated.");
                 }
-                // convert existing ifcproject to other format
-                else if (/*!File.Exists(saveFileDialog.FileName) &&*/ filePathWithoutExtension == globalFilePathWithoutExtension && wantedFileExtension != globalFileExtension)
+                // convert existing ifc file to other format
+                else if (filePathWithoutExtension == globalFilePathWithoutExtension && wantedFileExtension != globalFileExtension)
                 {
                     IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, wantedFileExtension);
                     mw.ViewModel.globalFileName = saveFileDialog.FileName;
-                    MessageBox.Show("File saved in other format.");
+                    MessageBox.Show($"File saved in {wantedFileExtension} format.");
                 }
+                // create new ifc file with new ifc project
                 else
                 {
                     mw.ViewModel.globalFileName = saveFileDialog.FileName;

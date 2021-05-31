@@ -24,7 +24,7 @@ namespace IFC_GUI.Models
 
         public ObjectModel()
         {
-            GlobalId = IfcDataHandling.generateNewIfcGUID();
+            GlobalId = IfcDataHandling.GenerateNewIfcGUID();
         }
 
         public ObjectModel(string globalid, string name, string description, string objecttype, List<string> isnestedby, List<string> nests)

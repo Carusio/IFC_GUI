@@ -4,11 +4,8 @@ using NodeNetwork;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace IFC_GUI.ViewModels
 {
@@ -97,7 +94,7 @@ namespace IFC_GUI.ViewModels
         #endregion
         public NodeListViewModel()
         {
-            Title = "Available nodes";
+            Title = "List of nodetypes";
             EmptyLabel = "No matching nodes found.";
             Display = DisplayMode.Tiles;
 

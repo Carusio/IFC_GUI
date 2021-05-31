@@ -24,13 +24,18 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto" MinHeight="100"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        
+        <views:MenuBarView x:Name="menuBarView" Grid.Row="0" Grid.ColumnSpan="2"/>
 
-        <views:MenuBarView x:Name="menuBarView" Grid.Row="0"/>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="0" Name="autoLayoutButton">Auto-Layout</Button>
+        <views:BreadcrumbBarView x:Name="breadcrumbBarView" Grid.Row="1" Grid.Column="0" MinHeight="30"/>
 
-        <views:BreadcrumbBarView x:Name="breadcrumbBarView" Grid.Row="1" Grid.ColumnSpan="5" MinHeight="30"/>
+        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1"  Name="autoLayoutButton">Auto-Layout</Button>
 
-        <nodenetwork:NetworkView x:Name="networkView" Grid.Row="2">
+        <nodenetwork:NetworkView x:Name="networkView" Grid.Row="2" Grid.ColumnSpan="2">
             <nodenetwork:NetworkView.Resources>
                 <Style TargetType="nodenetwork:NodeView">
                     <Setter Property="ContextMenu" Value="{StaticResource nodeMenu}" />
@@ -42,7 +47,7 @@
 
         <ContentControl x:Name="ContentControlPopup" Grid.Row="2"></ContentControl>
 
-        <views:NodeListView x:Name="nodeListView" Grid.Row="3"/>
+        <views:NodeListView x:Name="nodeListView" Grid.Row="3" Grid.ColumnSpan="2"/>
 
 
     </Grid>

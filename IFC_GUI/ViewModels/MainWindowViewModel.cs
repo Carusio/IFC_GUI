@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace IFC_GUI.ViewModels
 {
-    class NetworkBreadcrumb : BreadcrumbViewModel
+    public class NetworkBreadcrumb : BreadcrumbViewModel
     {
         #region Network
         private NetworkViewModel _network;
@@ -88,7 +88,7 @@ namespace IFC_GUI.ViewModels
                     }
             });
 
-            // update IsSuccesorFrom and IsPredessecorTo attributes, when connections were added or removed
+            // update IsSuccesorFrom and IsPredessecorTo attributes of TaskModels, when connections were added or removed
             mainNetwork.Network.Connections.Connect().ActOnEveryObject(
                 addedCon => {
                     var tmInput = ((IfcTaskNodeViewModel)addedCon.Input.Parent).TaskModel;
@@ -112,9 +112,10 @@ namespace IFC_GUI.ViewModels
                 }
                 );
 
+
             // all available NodeTypes in the NodeList
             NodeList.AddNodeType(() => new IfcTaskNodeViewModel());
-            NodeList.AddNodeType(() => new TestNodeViewModel());
+            //NodeList.AddNodeType(() => new TestNodeViewModel());
 
             // AutoLayout command
             ForceDirectedLayouter layouter = new ForceDirectedLayouter();
@@ -128,7 +129,6 @@ namespace IFC_GUI.ViewModels
                 {
                     return;
                 }
-
                 // show subnetwork of last or first selectedNode in SelectedNodes list - must be an IfcTaskNode
                 var selectedNode = Network.SelectedNodes.Items.First(); // .Last()
                 IfcTaskNodeViewModel selectedTaskNode;
@@ -208,24 +208,60 @@ namespace IFC_GUI.ViewModels
                         );
 
                     NetworkBreadcrumbBar.ActivePath.Add(subnetwork);
-                    IfcDataHandling.RecursiveNestingTaskModelToTaskNode(globalAllTaskModels, NetworkBreadcrumbBar, subnetwork, selectedTaskNode.TaskModel.GlobalId, false);
+                    GenerateTaskNodeForEachTaskModelOnCurrentLevel(globalAllTaskModels, subnetwork, selectedTaskNode.TaskModel.GlobalId);
                 }
-                /*if (selectedNode.TaskModel.Nests != null )//&& selectedNode.TaskModel.Nests.Any())
+            });
+        }
+
+        public NetworkViewModel GenerateTaskNodeForEachTaskModelOnCurrentLevel(List<TaskModel> allTaskModels, NetworkBreadcrumb crumbNetwork, string parentTaskModelGuid)
+        {
+            // create taskNode foreach TaskModel
+            foreach (TaskModel tm in allTaskModels)
+            {
+                // check on which level the task is and add the task to a list
+                if ((!tm.Nests.Any() && parentTaskModelGuid == "") || (tm.Nests.Any() && tm.Nests.First() == parentTaskModelGuid)) // can only be nested by at most one element
+                {
+                    crumbNetwork.Network.Nodes.Add(new IfcTaskNodeViewModel(tm));
+                }
+            }
+
+            // create Connections foreach taskNode
+            foreach (var taskNode in crumbNetwork.Network.Nodes.Items.OfType<IfcTaskNodeViewModel>())
+            {
+                // iterate through the GUIDs of predecessors of the current taskNode 
+                foreach (var guid in taskNode.TaskModel.IsSuccessorFrom)
+                {
+                    // add a connection to the Network if the GUID of the current predecessor matches the GUID of an existing node in this Network
+                    foreach (var taskNodeVM in crumbNetwork.Network.Nodes.Items.OfType<IfcTaskNodeViewModel>())
+                    {
+                        if (taskNodeVM.TaskModel.GlobalId == guid)
+                        {
+                            var connection = new IfcConnectionViewModel(crumbNetwork.Network, taskNode.Input, taskNodeVM.Output);
+                            crumbNetwork.Network.Connections.Add(connection);
+                        }
+                    }
+                }
+            }
+
+            // TODO:
+            // Testen auf Liste mit 0 Elemente, liste mit N Elementen, Liste die null ist
+
+            return crumbNetwork.Network;
+
+            // create a subnetwork foreach task on the current Level, that nests other tasks
+            /*foreach (TaskModel tm in allTaskModelsOnCurrentLevel)
+            {
+                if (tm.IsNestedBy.Any() && recursive)
                 {
                     var subnetwork = new NetworkBreadcrumb
                     {
-                        Name = selectedNode.TaskModel.Name,
+                        Name = tm.Name,
                         Network = new NetworkViewModel()
                     };
-
-                    NetworkBreadcrumbBar.ActivePath.Add(subnetwork);
-                    IfcDataHandling.RecursiveNesting(globalAllTaskModels, NetworkBreadcrumbBar, subnetwork, selectedNode.TaskModel.GlobalId, false);
-
-                    // List<TaskModel> nested = new List<TaskModel>();
-
-                    // IfcDataHandling.RecursiveNesting(globalAllTaskModels, NetworkBreadcrumbBar, (NetworkBreadcrumb)NetworkBreadcrumbBar.ActiveItem, ((IfcTaskNodeViewModel)Network.SelectedNodes.Items.First()).TaskModel.GlobalId, false);
-                }*/
-            });
+                    crumbBar.ActivePath.Add(subnetwork);
+                    RecursiveNestingTaskModelToTaskNode(allTaskModelsOnLowerLevelThanCurrent, crumbBar, subnetwork, tm.GlobalId, true);
+                }
+            }*/
         }
     }
 }

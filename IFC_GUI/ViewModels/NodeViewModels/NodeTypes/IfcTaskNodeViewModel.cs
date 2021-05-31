@@ -33,42 +33,39 @@ namespace IFC_GUI.ViewModels.NodeViewModels.NodeTypes
 
         public IfcTaskNodeViewModel() : base(NodeType.TaskNode)
         {
-            this.Name = "Task_Node";
+            this.Name = "TaskNode";
             this.Resizable = ResizeOrientation.HorizontalAndVertical;
             this.TaskModel = new TaskModel();
 
             Input = new IfcInputViewModel(PortType.None)
             {
-                Name = "IsSuccessorFrom"
+                Name = "Is successor from"
             };
             this.Inputs.Add(Input);
 
             Output = new IfcOutputViewModel(PortType.None)
             {
-                Name = "IsPredessecorTo"
+                Name = "Is predessecor to"
             };
             this.Outputs.Add(Output);
-
-            // MainWindowView mw = (MainWindowView)Window.GetWindow(this);
-            //mw.ViewModel.globalAllTaskModels.Add(this.TaskModel);*/
         }
 
         public IfcTaskNodeViewModel(TaskModel tm) : base(NodeType.TaskNode)
         {
-            this.Name = "Task_Node";
+            this.Name = "TaskNode";
             this.Resizable = ResizeOrientation.HorizontalAndVertical;
             this.TaskModel = tm;
 
             Input = new IfcInputViewModel(PortType.None)
             {
-                Name = "IsSuccessorFrom"
+                Name = "Is successor from"
             };
             this.Inputs.Add(Input);
 
 
             Output = new IfcOutputViewModel(PortType.None)
             {
-                Name = "IsPredessecorTo"
+                Name = "Is predessecor to"
             };
             this.Outputs.Add(Output);
         }
