@@ -120,7 +120,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="TestData\4TaskTest.ifc" />
-    <None Include="TestData\AddTaskTest.ifc" />
+    <None Include="TestData\4TaskTest.ifcxml" />
+    <None Include="TestData\4TaskTest.ifczip" />
+    <None Include="TestData\ModificationTaskTest.ifc" />
     <None Include="TestData\corruptedIfcFile.ifc" />
     <None Include="TestData\NoTaskIfcFile.ifc" />
   </ItemGroup>

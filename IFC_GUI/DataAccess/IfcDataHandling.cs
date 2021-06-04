@@ -457,7 +457,14 @@ namespace IFC_GUI.DataAccess
         //create a new ifcproject and the ifctasks
         public static void NewIfcData(string fileName, List<TaskModel> allTaskModels)
         {
+            string filePathWithoutExtension = System.IO.Path.ChangeExtension(fileName, null);
+            string filePathTemporary = filePathWithoutExtension + "_temp321654987.ifc";
             using (var model = IfcStore.Create(XbimSchemaVersion.Ifc4, XbimStoreType.InMemoryModel))
+            {
+                model.SaveAs(filePathTemporary);
+            }
+
+            using (var model = IfcStore.Open(filePathTemporary))
             {
                 using (var txn = model.BeginTransaction("New IfcFile"))
                 {
@@ -484,7 +491,6 @@ namespace IFC_GUI.DataAccess
                             theIfcTask.Name = taskmodel.Name;
                             theIfcTask.Description = taskmodel.Description;
                             theIfcTask.ObjectType = taskmodel.ObjectType;
-
                             theIfcTask.Identification = taskmodel.Identification;
                             theIfcTask.LongDescription = taskmodel.LongDescription;
                             theIfcTask.Status = taskmodel.Status;
@@ -710,8 +716,15 @@ namespace IFC_GUI.DataAccess
                     //commit changes
                     txn.Commit();
                 }
+                model.SaveAs(filePathTemporary);
+            }
+            
+            using (var model = IfcStore.Open(filePathTemporary))
+            {
                 model.SaveAs(fileName);
             }
+
+            File.Delete(filePathTemporary);
         }
 
         

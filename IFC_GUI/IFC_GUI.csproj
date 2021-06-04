@@ -195,8 +195,7 @@
     <Compile Include="ViewModels\NodeViewModels\IfcPendingConnectionViewModel.cs" />
     <Compile Include="ViewModels\NodeViewModels\IfcPortViewModel.cs" />
     <Compile Include="ViewModels\NodeViewModels\NodeTypes\IfcTaskNodeViewModel.cs" />
-    <Compile Include="ViewModels\NodeViewModels\NodeTypes\IfcTaskTimeViewModel.cs" />
-    <Compile Include="ViewModels\NodeViewModels\NodeTypes\TaskTimeVM.cs" />
+    <Compile Include="ViewModels\TaskTimeViewModel.cs" />
     <Compile Include="ViewModels\NodeViewModels\NodeTypes\TestNodeViewModel.cs" />
     <Compile Include="Toolkit\Layout\Configuration.cs" />
     <Compile Include="Toolkit\Layout\Engine.cs" />
@@ -232,11 +231,8 @@
     <Compile Include="Views\NodeViews\NodeTypesView\IfcTaskNodeView.xaml.cs">
       <DependentUpon>IfcTaskNodeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NodeViews\NodeTypesView\IfcTaskTimeView.xaml.cs">
-      <DependentUpon>IfcTaskTimeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NodeViews\NodeTypesView\TaskTimeV.xaml.cs">
-      <DependentUpon>TaskTimeV.xaml</DependentUpon>
+    <Compile Include="Views\TaskTimeView.xaml.cs">
+      <DependentUpon>TaskTimeView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\BreadcrumbBarView.xaml">
       <SubType>Designer</SubType>
@@ -291,11 +287,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NodeViews\NodeTypesView\IfcTaskTimeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NodeViews\NodeTypesView\TaskTimeV.xaml">
+    <Page Include="Views\TaskTimeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -109,8 +109,6 @@ C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\Node
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\IfcOutputView.g.cs
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\IfcInputView.baml
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\IfcOutputView.baml
-C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\NodeTypesView\IfcTaskTimeView.g.cs
-C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\NodeTypesView\IfcTaskTimeView.baml
 C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\bin\Debug\IFC_GUI.exe.config
 C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\bin\Debug\IFC_GUI.exe
 C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\bin\Debug\IFC_GUI.pdb
@@ -224,11 +222,11 @@ C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\obj\Debug\IFC_GUI.csproj.Cor
 C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\obj\Debug\IFC_GUI.csproj.CopyComplete
 C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\obj\Debug\IFC_GUI.exe
 C:\Users\AKnep\Desktop\VisualStudio\IFC_GUI\IFC_GUI\obj\Debug\IFC_GUI.pdb
-C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\NodeTypesView\TaskTimeV.g.cs
-C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\NodeViews\NodeTypesView\TaskTimeV.baml
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\TaskTimeView.g.cs
+C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\obj\Debug\Views\TaskTimeView.baml

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI\App.xaml
-13-55305507
+12-1508429505
 
-41-736906520
+39187351112
 581858725706
-Views\BreadcrumbBarView.xaml;Views\MainWindow.xaml;Views\MenuBarView.xaml;Views\NodeListView.xaml;Views\NodeViews\IfcConnectionView.xaml;Views\NodeViews\IfcInputView.xaml;Views\NodeViews\IfcNodeView.xaml;Views\NodeViews\IfcOutputView.xaml;Views\NodeViews\IfcPendingConnectionView.xaml;Views\NodeViews\IfcPortView.xaml;Views\NodeViews\NodeTypesView\IfcTaskNodeView.xaml;Views\NodeViews\NodeTypesView\IfcTaskTimeView.xaml;Views\NodeViews\NodeTypesView\TaskTimeV.xaml;
+Views\BreadcrumbBarView.xaml;Views\MainWindow.xaml;Views\MenuBarView.xaml;Views\NodeListView.xaml;Views\NodeViews\IfcConnectionView.xaml;Views\NodeViews\IfcInputView.xaml;Views\NodeViews\IfcNodeView.xaml;Views\NodeViews\IfcOutputView.xaml;Views\NodeViews\IfcPendingConnectionView.xaml;Views\NodeViews\IfcPortView.xaml;Views\NodeViews\NodeTypesView\IfcTaskNodeView.xaml;Views\TaskTimeView.xaml;
 
-True
+False
 

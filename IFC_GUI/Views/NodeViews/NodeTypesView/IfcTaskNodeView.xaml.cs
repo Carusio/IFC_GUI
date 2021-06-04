@@ -1,21 +1,11 @@
 ﻿using IFC_GUI.ViewModels.NodeViewModels.NodeTypes;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Disposables;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using IFC_GUI.Views;
+
 
 namespace IFC_GUI.Views.NodeViews.NodeTypesView
 {
@@ -55,19 +45,9 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
 
         private void TasktimeButton_Click(object sender, RoutedEventArgs e)
         {
-            //this.ViewModel.IfcTaskTimeViewModelToMainWindow();
-            /*var w2 = new IfcTaskTimeView();
-            w2.ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
-            w2.Show();*/
-
-
             MainWindowView mw = (MainWindowView)Window.GetWindow(this);
-            // mw.ViewModel.TaskTimeWindow = new IfcTaskTimeViewModel();
 
-
-            //var timeView = new IfcTaskTimeView();
-
-            var tasktimewindow = new TaskTimeV
+            var tasktimewindow = new TaskTimeView
             {
                 Owner = mw,
                 Title = $"TaskTime of {this.ViewModel.TaskModel.Name}"
@@ -76,28 +56,6 @@ namespace IFC_GUI.Views.NodeViews.NodeTypesView
             tasktimewindow.ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
 
             tasktimewindow.Show();
-            /*Window window = new Window
-            {
-                Title = "TaskTime properties",
-                Content = timeView,
-                SizeToContent = SizeToContent.WidthAndHeight,
-                Owner = mw
-            };
-            window.ShowDialog();*/
-
-            //mw.ContentControlPopup.Content = timeView;
-
-
-            
-            // würde mit manuellen binding funktionieren
-            //((IfcTaskTimeView)window.Content).ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
-            
-            
-            //timeView.ViewModel.TaskTimeModel = this.ViewModel.TaskModel.TaskTime;
-
-
-
-            // timeView.ViewModel.TaskTimeModel.Name = this.ViewModel.TaskModel.TaskTime.Name;
         }
 
         private void PriorityTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)

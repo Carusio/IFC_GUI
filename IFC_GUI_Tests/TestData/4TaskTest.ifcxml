@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ifcXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifc="http://www.buildingsmart-tech.org/ifcXML/IFC4/Add2" xsi:schemaLocation="http://www.buildingsmart-tech.org/ifcXML/IFC4/Add2 https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2/XML/IFC4_ADD2.xsd" id="uos_1" express="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2/EXPRESS/IFC4_ADD2.exp" xmlns="http://www.buildingsmart-tech.org/ifcXML/IFC4/Add2">
+  <header>
+    <name>C:\Users\AKnep\Desktop\Studienarbeit\source\IFC_GUI\IFC_GUI_Tests\TestData\4TaskTest_temp321654987.ifc</name>
+    <time_stamp>2021-05-15T17:35:41</time_stamp>
+    <author />
+    <organization />
+    <preprocessor_version>Processor version 5.1.0.0</preprocessor_version>
+    <originating_system>Xbim.IO.MemoryModel</originating_system>
+    <documentation />
+  </header>
+  <IfcProject id="i1" GlobalId="1onMxdugb7QBGeVeEz_9l7" Name="Basic Creation">
+    <OwnerHistory id="i2" xsi:type="IfcOwnerHistory" ChangeAction="added" LastModifiedDate="1621100142" CreationDate="0">
+      <OwningUser id="i5" xsi:type="IfcPersonAndOrganization">
+        <ThePerson id="i3" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+        <TheOrganization id="i4" xsi:type="IfcOrganization" Name="Unspecified" />
+      </OwningUser>
+      <OwningApplication id="i6" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+        <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+      </OwningApplication>
+    </OwnerHistory>
+    <RepresentationContexts>
+      <IfcGeometricRepresentationContext id="i19" pos="0" ContextIdentifier="Building Model" ContextType="Model" CoordinateSpaceDimension="3" Precision="1E-05">
+        <WorldCoordinateSystem>
+          <IfcAxis2Placement3D id="i18">
+            <Location id="i17" xsi:type="IfcCartesianPoint" Coordinates="0 0 0" />
+          </IfcAxis2Placement3D>
+        </WorldCoordinateSystem>
+      </IfcGeometricRepresentationContext>
+      <IfcGeometricRepresentationContext id="i22" pos="1" ContextIdentifier="Building Plan View" ContextType="Plan" CoordinateSpaceDimension="2" Precision="1E-05">
+        <WorldCoordinateSystem>
+          <IfcAxis2Placement2D id="i21">
+            <Location id="i20" xsi:type="IfcCartesianPoint" Coordinates="0 0" />
+          </IfcAxis2Placement2D>
+        </WorldCoordinateSystem>
+      </IfcGeometricRepresentationContext>
+    </RepresentationContexts>
+    <UnitsInContext id="i7" xsi:type="IfcUnitAssignment">
+      <Units>
+        <IfcSIUnit id="i8" pos="0" UnitType="lengthunit" Prefix="milli" Name="metre" />
+        <IfcSIUnit id="i9" pos="1" UnitType="areaunit" Name="square_metre" />
+        <IfcSIUnit id="i10" pos="2" UnitType="volumeunit" Name="cubic_metre" />
+        <IfcSIUnit id="i11" pos="3" UnitType="solidangleunit" Name="steradian" />
+        <IfcSIUnit id="i12" pos="4" UnitType="planeangleunit" Name="radian" />
+        <IfcSIUnit id="i13" pos="5" UnitType="massunit" Name="gram" />
+        <IfcSIUnit id="i14" pos="6" UnitType="timeunit" Name="second" />
+        <IfcSIUnit id="i15" pos="7" UnitType="thermodynamictemperatureunit" Name="degree_celsius" />
+        <IfcSIUnit id="i16" pos="8" UnitType="luminousintensityunit" Name="lumen" />
+      </Units>
+    </UnitsInContext>
+  </IfcProject>
+  <IfcTask id="i23" GlobalId="1OaCbKxo15u83wevCrmbuc" Name="TheFirstTask" Description="test" ObjectType="test" Identification="TestTest" LongDescription="test" Status="test" WorkMethod="test" IsMilestone="true" Priority="1" PredefinedType="attendance">
+    <OwnerHistory id="i422" xsi:type="IfcOwnerHistory" ChangeAction="modified" LastModifiedDate="1622805038" CreationDate="0">
+      <OwningUser id="i424" xsi:type="IfcPersonAndOrganization">
+        <ThePerson id="i423" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+        <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+      </OwningUser>
+      <OwningApplication id="i425" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+        <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+      </OwningApplication>
+    </OwnerHistory>
+    <IsNestedBy>
+      <IfcRelNests id="i27" pos="0" GlobalId="0Rj2jegGnEJff0q_J_rj3$">
+        <OwnerHistory id="i30" xsi:type="IfcOwnerHistory" ChangeAction="modified" LastModifiedDate="1621100200" CreationDate="0">
+          <OwningUser id="i32" xsi:type="IfcPersonAndOrganization">
+            <ThePerson id="i31" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+            <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+          </OwningUser>
+          <OwningApplication id="i33" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+            <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+          </OwningApplication>
+        </OwnerHistory>
+        <RelatedObjects>
+          <IfcTask id="i34" pos="0" GlobalId="1UL7l8PXT0cwhk_rMq8oMA" Name="ThirdTask" Description="t" ObjectType="t" Identification="t" LongDescription="t" Status="t" WorkMethod="t" IsMilestone="true" Priority="4" PredefinedType="attendance">
+            <OwnerHistory ref="i422" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+            <IsNestedBy>
+              <IfcRelNests id="i39" pos="0" GlobalId="2ttLpfKEP8TRqTobCGDq4K">
+                <OwnerHistory id="i35" xsi:type="IfcOwnerHistory" ChangeAction="added" LastModifiedDate="1621100200" CreationDate="0">
+                  <OwningUser ref="i32" xsi:type="IfcPersonAndOrganization" xsi:nil="true" />
+                  <OwningApplication ref="i33" xsi:type="IfcApplication" xsi:nil="true" />
+                </OwnerHistory>
+                <RelatedObjects />
+              </IfcRelNests>
+            </IsNestedBy>
+            <TaskTime id="i36" xsi:type="IfcTaskTime" Name="test" DataOrigin="measured" UserDefinedDataOrigin="test" DurationType="elapsedtime" ScheduleDuration="" ScheduleStart="" ScheduleFinish="" EarlyStart="" EarlyFinish="" LateStart="" LateFinish="" FreeFloat="" TotalFloat="" IsCritical="false" StatusTime="" ActualDuration="" ActualStart="" ActualFinish="" RemainingTime="" />
+          </IfcTask>
+          <IfcTask id="i37" pos="1" GlobalId="0cVbepU21DTv8BAirQGlyd" Name="FourthTask" Description="test" ObjectType="test" Identification="test" LongDescription="test" Status="test" WorkMethod="" IsMilestone="true" Priority="23" PredefinedType="attendance">
+            <OwnerHistory ref="i422" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+            <IsNestedBy>
+              <IfcRelNests id="i41" pos="0" GlobalId="3khBMNTIP6FB8oqB8RYVFM">
+                <OwnerHistory ref="i35" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+                <RelatedObjects />
+              </IfcRelNests>
+            </IsNestedBy>
+            <TaskTime id="i38" xsi:type="IfcTaskTime" Name="t" DataOrigin="measured" UserDefinedDataOrigin="t" DurationType="elapsedtime" ScheduleDuration="" ScheduleStart="" ScheduleFinish="" EarlyStart="" EarlyFinish="" LateStart="" LateFinish="" FreeFloat="" TotalFloat="" IsCritical="false" StatusTime="" ActualDuration="" ActualStart="" ActualFinish="" RemainingTime="" Completion="3.33" />
+          </IfcTask>
+        </RelatedObjects>
+      </IfcRelNests>
+    </IsNestedBy>
+    <TaskTime id="i24" xsi:type="IfcTaskTime" Name="testtime" DataOrigin="measured" UserDefinedDataOrigin="test" DurationType="elapsedtime" ScheduleDuration="P1Y1M1DT1H1M1S" ScheduleStart="" ScheduleFinish="" EarlyStart="" EarlyFinish="" LateStart="" LateFinish="" FreeFloat="P1Y1M1DT1H1M1S" TotalFloat="P1Y1M1DT1H1M1S" IsCritical="false" StatusTime="" ActualDuration="" ActualStart="" ActualFinish="" RemainingTime="" Completion="30" />
+  </IfcTask>
+  <IfcTask id="i25" GlobalId="3Ymqe0aCHDpvnj14$UD0dk" Name="SecondTask" Description="test" ObjectType="test" Identification="test" LongDescription="etst" Status="test" WorkMethod="test" IsMilestone="false" Priority="2" PredefinedType="attendance">
+    <OwnerHistory ref="i422" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+    <IsNestedBy>
+      <IfcRelNests id="i29" pos="0" GlobalId="0bnal7emv9ru520DOpqLO8">
+        <OwnerHistory ref="i2" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+        <RelatedObjects />
+      </IfcRelNests>
+    </IsNestedBy>
+    <TaskTime id="i26" xsi:type="IfcTaskTime" Name="test" DataOrigin="measured" UserDefinedDataOrigin="test" DurationType="elapsedtime" ScheduleDuration="" ScheduleStart="" ScheduleFinish="" EarlyStart="" EarlyFinish="" LateStart="" LateFinish="" FreeFloat="" TotalFloat="" IsCritical="false" StatusTime="" ActualDuration="" ActualStart="" ActualFinish="" RemainingTime="" />
+  </IfcTask>
+  <IfcRelSequence id="i28" GlobalId="3BbtvVEv1DS8uZoCybhVRw">
+    <OwnerHistory ref="i2" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+    <RelatingProcess ref="i23" xsi:type="IfcTask" xsi:nil="true" />
+    <RelatedProcess ref="i25" xsi:type="IfcTask" xsi:nil="true" />
+  </IfcRelSequence>
+  <IfcRelSequence id="i40" GlobalId="1H3fUP2XT9Hg02RzndMW$b">
+    <OwnerHistory ref="i35" xsi:type="IfcOwnerHistory" xsi:nil="true" />
+    <RelatingProcess ref="i34" xsi:type="IfcTask" xsi:nil="true" />
+    <RelatedProcess ref="i37" xsi:type="IfcTask" xsi:nil="true" />
+  </IfcRelSequence>
+  <IfcOwnerHistory id="i42" ChangeAction="modified" LastModifiedDate="1621115769" CreationDate="0">
+    <OwningUser id="i44" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i43" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i45" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i46" ChangeAction="modified" LastModifiedDate="1621115823" CreationDate="0">
+    <OwningUser id="i48" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i47" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i49" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i50" ChangeAction="modified" LastModifiedDate="1621115860" CreationDate="0">
+    <OwningUser id="i52" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i51" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i53" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i54" ChangeAction="modified" LastModifiedDate="1621115969" CreationDate="0">
+    <OwningUser id="i56" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i55" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i57" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i58" ChangeAction="modified" LastModifiedDate="1621116022" CreationDate="0">
+    <OwningUser id="i60" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i59" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i61" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i62" ChangeAction="modified" LastModifiedDate="1621116512" CreationDate="0">
+    <OwningUser id="i64" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i63" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i65" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i66" ChangeAction="modified" LastModifiedDate="1621116512" CreationDate="0">
+    <OwningUser id="i68" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i67" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i69" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i70" ChangeAction="modified" LastModifiedDate="1621116512" CreationDate="0">
+    <OwningUser id="i72" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i71" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i73" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i74" ChangeAction="modified" LastModifiedDate="1621123622" CreationDate="0">
+    <OwningUser id="i76" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i75" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i77" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i78" ChangeAction="modified" LastModifiedDate="1621123622" CreationDate="0">
+    <OwningUser id="i80" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i79" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i81" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i82" ChangeAction="modified" LastModifiedDate="1621123622" CreationDate="0">
+    <OwningUser id="i84" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i83" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i85" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i86" ChangeAction="modified" LastModifiedDate="1621124079" CreationDate="0">
+    <OwningUser id="i88" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i87" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i89" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i90" ChangeAction="modified" LastModifiedDate="1621124079" CreationDate="0">
+    <OwningUser id="i92" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i91" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i93" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i94" ChangeAction="modified" LastModifiedDate="1621124079" CreationDate="0">
+    <OwningUser id="i96" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i95" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i97" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i98" ChangeAction="modified" LastModifiedDate="1621161001" CreationDate="0">
+    <OwningUser id="i100" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i99" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i101" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i102" ChangeAction="modified" LastModifiedDate="1621161001" CreationDate="0">
+    <OwningUser id="i104" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i103" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i105" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i106" ChangeAction="modified" LastModifiedDate="1621161002" CreationDate="0">
+    <OwningUser id="i108" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i107" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i109" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i110" ChangeAction="modified" LastModifiedDate="1621161018" CreationDate="0">
+    <OwningUser id="i112" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i111" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i113" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i114" ChangeAction="modified" LastModifiedDate="1621161019" CreationDate="0">
+    <OwningUser id="i116" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i115" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i117" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i118" ChangeAction="modified" LastModifiedDate="1621161019" CreationDate="0">
+    <OwningUser id="i120" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i119" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i121" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i122" ChangeAction="modified" LastModifiedDate="1621161027" CreationDate="0">
+    <OwningUser id="i124" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i123" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i125" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i126" ChangeAction="modified" LastModifiedDate="1621161027" CreationDate="0">
+    <OwningUser id="i128" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i127" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i129" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i130" ChangeAction="modified" LastModifiedDate="1621161027" CreationDate="0">
+    <OwningUser id="i132" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i131" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i133" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i134" ChangeAction="modified" LastModifiedDate="1621173699" CreationDate="0">
+    <OwningUser id="i136" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i135" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i137" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i138" ChangeAction="modified" LastModifiedDate="1621173699" CreationDate="0">
+    <OwningUser id="i140" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i139" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i141" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i142" ChangeAction="modified" LastModifiedDate="1621173731" CreationDate="0">
+    <OwningUser id="i144" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i143" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i145" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i146" ChangeAction="modified" LastModifiedDate="1621173731" CreationDate="0">
+    <OwningUser id="i148" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i147" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i149" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i150" ChangeAction="modified" LastModifiedDate="1621173732" CreationDate="0">
+    <OwningUser id="i152" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i151" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i153" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i154" ChangeAction="modified" LastModifiedDate="1621181941" CreationDate="0">
+    <OwningUser id="i156" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i155" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i157" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i158" ChangeAction="modified" LastModifiedDate="1621181941" CreationDate="0">
+    <OwningUser id="i160" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i159" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i161" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i162" ChangeAction="modified" LastModifiedDate="1621181941" CreationDate="0">
+    <OwningUser id="i164" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i163" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i165" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i166" ChangeAction="modified" LastModifiedDate="1621182129" CreationDate="0">
+    <OwningUser id="i168" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i167" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i169" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i170" ChangeAction="modified" LastModifiedDate="1621182129" CreationDate="0">
+    <OwningUser id="i172" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i171" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i173" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i174" ChangeAction="modified" LastModifiedDate="1621182129" CreationDate="0">
+    <OwningUser id="i176" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i175" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i177" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i178" ChangeAction="modified" LastModifiedDate="1621182228" CreationDate="0">
+    <OwningUser id="i180" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i179" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i181" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i182" ChangeAction="modified" LastModifiedDate="1621182228" CreationDate="0">
+    <OwningUser id="i184" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i183" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i185" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i186" ChangeAction="modified" LastModifiedDate="1621182228" CreationDate="0">
+    <OwningUser id="i188" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i187" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i189" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i190" ChangeAction="modified" LastModifiedDate="1621198721" CreationDate="0">
+    <OwningUser id="i192" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i191" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i193" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i194" ChangeAction="modified" LastModifiedDate="1621198721" CreationDate="0">
+    <OwningUser id="i196" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i195" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i197" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i198" ChangeAction="modified" LastModifiedDate="1621198721" CreationDate="0">
+    <OwningUser id="i200" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i199" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i201" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i202" ChangeAction="modified" LastModifiedDate="1621198853" CreationDate="0">
+    <OwningUser id="i204" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i203" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i205" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i206" ChangeAction="modified" LastModifiedDate="1621198853" CreationDate="0">
+    <OwningUser id="i208" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i207" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i209" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i210" ChangeAction="modified" LastModifiedDate="1621198854" CreationDate="0">
+    <OwningUser id="i212" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i211" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i213" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i214" ChangeAction="modified" LastModifiedDate="1621198905" CreationDate="0">
+    <OwningUser id="i216" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i215" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i217" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i218" ChangeAction="modified" LastModifiedDate="1621198905" CreationDate="0">
+    <OwningUser id="i220" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i219" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i221" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i222" ChangeAction="modified" LastModifiedDate="1621198905" CreationDate="0">
+    <OwningUser id="i224" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i223" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i225" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i226" ChangeAction="modified" LastModifiedDate="1621198922" CreationDate="0">
+    <OwningUser id="i228" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i227" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i229" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i230" ChangeAction="modified" LastModifiedDate="1621198922" CreationDate="0">
+    <OwningUser id="i232" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i231" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i233" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i234" ChangeAction="modified" LastModifiedDate="1621198923" CreationDate="0">
+    <OwningUser id="i236" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i235" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i237" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i238" ChangeAction="modified" LastModifiedDate="1621200184" CreationDate="0">
+    <OwningUser id="i240" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i239" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i241" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i242" ChangeAction="modified" LastModifiedDate="1621200184" CreationDate="0">
+    <OwningUser id="i244" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i243" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i245" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i246" ChangeAction="modified" LastModifiedDate="1621200184" CreationDate="0">
+    <OwningUser id="i248" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i247" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i249" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i250" ChangeAction="modified" LastModifiedDate="1621200792" CreationDate="0">
+    <OwningUser id="i252" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i251" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i253" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i254" ChangeAction="modified" LastModifiedDate="1621200792" CreationDate="0">
+    <OwningUser id="i256" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i255" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i257" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i258" ChangeAction="modified" LastModifiedDate="1621200792" CreationDate="0">
+    <OwningUser id="i260" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i259" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i261" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i262" ChangeAction="modified" LastModifiedDate="1621202531" CreationDate="0">
+    <OwningUser id="i264" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i263" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i265" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i266" ChangeAction="modified" LastModifiedDate="1621202531" CreationDate="0">
+    <OwningUser id="i268" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i267" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i269" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i270" ChangeAction="modified" LastModifiedDate="1621202532" CreationDate="0">
+    <OwningUser id="i272" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i271" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i273" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i274" ChangeAction="modified" LastModifiedDate="1621202695" CreationDate="0">
+    <OwningUser id="i276" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i275" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i277" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i278" ChangeAction="modified" LastModifiedDate="1621202695" CreationDate="0">
+    <OwningUser id="i280" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i279" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i281" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i282" ChangeAction="modified" LastModifiedDate="1621202695" CreationDate="0">
+    <OwningUser id="i284" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i283" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i285" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i286" ChangeAction="modified" LastModifiedDate="1621202809" CreationDate="0">
+    <OwningUser id="i288" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i287" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i289" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i290" ChangeAction="modified" LastModifiedDate="1621202809" CreationDate="0">
+    <OwningUser id="i292" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i291" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i293" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i294" ChangeAction="modified" LastModifiedDate="1621202809" CreationDate="0">
+    <OwningUser id="i296" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i295" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i297" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i298" ChangeAction="modified" LastModifiedDate="1621202854" CreationDate="0">
+    <OwningUser id="i300" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i299" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i301" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i302" ChangeAction="modified" LastModifiedDate="1621202854" CreationDate="0">
+    <OwningUser id="i304" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i303" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i305" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i306" ChangeAction="modified" LastModifiedDate="1621202854" CreationDate="0">
+    <OwningUser id="i308" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i307" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i309" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i310" ChangeAction="modified" LastModifiedDate="1621203960" CreationDate="0">
+    <OwningUser id="i312" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i311" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i313" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i314" ChangeAction="modified" LastModifiedDate="1621203960" CreationDate="0">
+    <OwningUser id="i316" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i315" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i317" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i318" ChangeAction="modified" LastModifiedDate="1621203960" CreationDate="0">
+    <OwningUser id="i320" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i319" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i321" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i322" ChangeAction="modified" LastModifiedDate="1621204947" CreationDate="0">
+    <OwningUser id="i324" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i323" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i325" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i326" ChangeAction="modified" LastModifiedDate="1621204947" CreationDate="0">
+    <OwningUser id="i328" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i327" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i329" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i330" ChangeAction="modified" LastModifiedDate="1621204947" CreationDate="0">
+    <OwningUser id="i332" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i331" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i333" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i334" ChangeAction="modified" LastModifiedDate="1621272093" CreationDate="0">
+    <OwningUser id="i336" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i335" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i337" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i338" ChangeAction="modified" LastModifiedDate="1621615872" CreationDate="0">
+    <OwningUser id="i340" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i339" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i341" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i342" ChangeAction="modified" LastModifiedDate="1621615872" CreationDate="0">
+    <OwningUser id="i344" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i343" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i345" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i346" ChangeAction="modified" LastModifiedDate="1621615872" CreationDate="0">
+    <OwningUser id="i348" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i347" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i349" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i350" ChangeAction="modified" LastModifiedDate="1621616004" CreationDate="0">
+    <OwningUser id="i352" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i351" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i353" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i354" ChangeAction="modified" LastModifiedDate="1621616005" CreationDate="0">
+    <OwningUser id="i356" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i355" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i357" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i358" ChangeAction="modified" LastModifiedDate="1621616005" CreationDate="0">
+    <OwningUser id="i360" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i359" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i361" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i362" ChangeAction="modified" LastModifiedDate="1621616613" CreationDate="0">
+    <OwningUser id="i364" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i363" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i365" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i366" ChangeAction="modified" LastModifiedDate="1621616613" CreationDate="0">
+    <OwningUser id="i368" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i367" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i369" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i370" ChangeAction="modified" LastModifiedDate="1621616613" CreationDate="0">
+    <OwningUser id="i372" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i371" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i373" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i374" ChangeAction="modified" LastModifiedDate="1621616649" CreationDate="0">
+    <OwningUser id="i376" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i375" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i377" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i378" ChangeAction="modified" LastModifiedDate="1621616649" CreationDate="0">
+    <OwningUser id="i380" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i379" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i381" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i382" ChangeAction="modified" LastModifiedDate="1621616649" CreationDate="0">
+    <OwningUser id="i384" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i383" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i385" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i386" ChangeAction="modified" LastModifiedDate="1621616806" CreationDate="0">
+    <OwningUser id="i388" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i387" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i389" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i390" ChangeAction="modified" LastModifiedDate="1621616806" CreationDate="0">
+    <OwningUser id="i392" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i391" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i393" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i394" ChangeAction="modified" LastModifiedDate="1621616806" CreationDate="0">
+    <OwningUser id="i396" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i395" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i397" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i398" ChangeAction="modified" LastModifiedDate="1622802346" CreationDate="0">
+    <OwningUser id="i400" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i399" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i401" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i402" ChangeAction="modified" LastModifiedDate="1622802346" CreationDate="0">
+    <OwningUser id="i404" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i403" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i405" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i406" ChangeAction="modified" LastModifiedDate="1622802346" CreationDate="0">
+    <OwningUser id="i408" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i407" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i409" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i410" ChangeAction="modified" LastModifiedDate="1622803057" CreationDate="0">
+    <OwningUser id="i412" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i411" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i413" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i414" ChangeAction="modified" LastModifiedDate="1622803057" CreationDate="0">
+    <OwningUser id="i416" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i415" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i417" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+  <IfcOwnerHistory id="i418" ChangeAction="modified" LastModifiedDate="1622803057" CreationDate="0">
+    <OwningUser id="i420" xsi:type="IfcPersonAndOrganization">
+      <ThePerson id="i419" xsi:type="IfcPerson" FamilyName="AKnep" GivenName="" MiddleNames="" PrefixTitles="" SuffixTitles="" />
+      <TheOrganization ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningUser>
+    <OwningApplication id="i421" xsi:type="IfcApplication" Version="Unspecified" ApplicationFullName="Unspecified" ApplicationIdentifier="">
+      <ApplicationDeveloper ref="i4" xsi:type="IfcOrganization" xsi:nil="true" />
+    </OwningApplication>
+  </IfcOwnerHistory>
+</ifcXML>
