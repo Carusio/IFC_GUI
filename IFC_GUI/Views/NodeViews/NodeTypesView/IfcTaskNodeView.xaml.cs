@@ -4,7 +4,6 @@ using System.Reactive.Disposables;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
-using IFC_GUI.Views;
 
 
 namespace IFC_GUI.Views.NodeViews.NodeTypesView

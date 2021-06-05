@@ -1,21 +1,15 @@
-﻿using DynamicData;
-using IFC_GUI.Models;
-using IFC_GUI.ViewModels;
-using IFC_GUI.ViewModels.NodeViewModels;
-using IFC_GUI.ViewModels.NodeViewModels.NodeTypes;
+﻿using IFC_GUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xbim.Common;
 using Xbim.Common.Step21;
 using Xbim.Ifc;
 using Xbim.Ifc4.DateTimeResource;
 using Xbim.Ifc4.Interfaces;
 using Xbim.Ifc4.Kernel;
-using Xbim.Ifc4.MeasureResource;
 using Xbim.Ifc4.ProcessExtension;
 using Xbim.IO;
 
@@ -23,6 +17,12 @@ namespace IFC_GUI.DataAccess
 {
     public class IfcDataHandling
     {
+        /// <summary>
+        /// open existing ifc file
+        /// ----------------------------------------------------------------------------------------------------------------------------------------------------
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public static List<TaskModel> OpenIfcData(string fileName)
         {
             List<TaskModel> allTaskModelsList = new List<TaskModel>();
@@ -144,8 +144,13 @@ namespace IFC_GUI.DataAccess
         }
 
 
-
-        // update an existing ifcproject and the included ifctasks and create new IfcTasks, if the project does not contain them already
+        /// <summary>
+        /// update an existing ifcproject and the included ifctasks and create new IfcTasks, if the project does not contain them already
+        /// -------------------------------------------------------------------------------------------------------------------------------------------------------
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="allTaskModels"></param>
+        /// <param name="wantedfileExtension"></param>
         public static void UpdateIfcData(string fileName, List<TaskModel>allTaskModels, string wantedfileExtension)
         {
             // --- BEGIN
@@ -454,7 +459,14 @@ namespace IFC_GUI.DataAccess
             });
         }
 
-        //create a new ifcproject and the ifctasks
+
+        /// <summary>
+        /// create a new ifcproject and the ifctasks
+        /// ------------------------------------------------------------------------------------------------------------------------------------------------
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="allTaskModels"></param>
+
         public static void NewIfcData(string fileName, List<TaskModel> allTaskModels)
         {
             string filePathWithoutExtension = System.IO.Path.ChangeExtension(fileName, null);
@@ -646,8 +658,6 @@ namespace IFC_GUI.DataAccess
                             });
                         }
                     }
-
-                    // TODO: check if this can be done before commit or if we need two commits
 
                     foreach (var taskmodel in allTaskModels)
                     {

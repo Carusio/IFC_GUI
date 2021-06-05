@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NodeNetwork.ViewModels;
-using System.Threading.Tasks;
+﻿using NodeNetwork.ViewModels;
+using System;
 
 namespace IFC_GUI.ViewModels.Toolkit.Layout
 {
-	public class Configuration
+    public class Configuration
 	{
 		/// <summary>
 		/// The network whose nodes are to be repositioned.

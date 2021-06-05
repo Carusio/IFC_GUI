@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace IFC_GUI.ViewModels.Toolkit.Layout
-{   
-	/// <summary>
-	/// Reposition the nodes in a network using a physics-based approach.
-	/// The nodes are interpreted as point masses, and the connections are represented
-	/// by springs. This system, along with a few additional forces such as friction and a
-	/// horizontal force, is then simulated to calculate the new position of the nodes.
-	/// </summary>
-	public class ForceDirectedLayouter
+{
+    /// <summary>
+    /// Reposition the nodes in a network using a physics-based approach.
+    /// The nodes are interpreted as point masses, and the connections are represented
+    /// by springs. This system, along with a few additional forces such as friction and a
+    /// horizontal force, is then simulated to calculate the new position of the nodes.
+    /// </summary>
+    public class ForceDirectedLayouter
     {
 		/// <summary>
 		/// Layout the nodes in the network.

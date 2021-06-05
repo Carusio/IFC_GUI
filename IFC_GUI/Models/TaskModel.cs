@@ -1,9 +1,4 @@
-﻿using IFC_GUI.DataAccess;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace IFC_GUI.Models
 {
@@ -17,7 +12,6 @@ namespace IFC_GUI.Models
         public string WorkMethod { get; set; }
         public bool IsMilestone { get; set; }
         public string Priority { get; set; }
-        // TaskTime could be another datatype
         public TaskTimeModel TaskTime { get; set; } = new TaskTimeModel();
         public int PredefinedType { get; set; }
 
@@ -27,23 +21,8 @@ namespace IFC_GUI.Models
 
         public TaskModel() : base ()
         {
-            // TODO: probably have to delete this if updating globalAllTaskModels doesnt work like this
-            /*GlobalId = IfcDataHandling.newIfcGUID();
-            Name = "";
-            Description = "";
-            ObjectType = "";
-            Identification = "";
-            LongDescription = "";
-            Status = "";
-            WorkMethod = "";
-            IsMilestone = false;
-            Priority = "";
-            TaskTime = "";
-            PredefinedType = 13;
-            Nests = new List<string>();
-            IsNestedBy = new List<string>();
-            IsPredecessorTo = new List<string>();
-            IsSuccessorFrom = new List<string>();*/
+            // so the combobox shows the default value
+            PredefinedType = -1;
         }
 
         public TaskModel(string globalid, string name, string description, string objecttype, string identification, string longdescription, string status,

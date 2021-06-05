@@ -51,7 +51,7 @@ namespace IFC_GUI.Views
             bool? ok = openFileDialog.ShowDialog();
 
             // check if the type of the selected file is supported
-            if (ok != true || !IfcDataHandling.CheckFileExtension(openFileDialog.FileName))  // TODO: check if ifc file or others (ifcxml? ...)
+            if (ok != true || !IfcDataHandling.CheckFileExtension(openFileDialog.FileName))
             {
                 MessageBox.Show("file type not supported");
                 return;

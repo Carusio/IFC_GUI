@@ -1,22 +1,14 @@
 ﻿using DynamicData;
 using IFC_GUI.Models;
-using IFC_GUI.Views;
-using IFC_GUI.Views.NodeViews;
 using IFC_GUI.Views.NodeViews.NodeTypesView;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace IFC_GUI.ViewModels.NodeViewModels.NodeTypes
 {
     public class IfcTaskNodeViewModel : IfcNodeViewModel
     {
-        //TODO: if Ifctasknodeview doesnt work back to ifcnodeview
         static IfcTaskNodeViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new IfcTaskNodeView(), typeof(IViewFor<IfcTaskNodeViewModel>));

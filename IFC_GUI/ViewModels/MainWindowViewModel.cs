@@ -1,5 +1,4 @@
 ﻿using DynamicData;
-using IFC_GUI.DataAccess;
 using IFC_GUI.Models;
 using IFC_GUI.ViewModels.NodeViewModels;
 using IFC_GUI.ViewModels.NodeViewModels.NodeTypes;
@@ -11,8 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IFC_GUI.ViewModels
 {
@@ -121,8 +118,7 @@ namespace IFC_GUI.ViewModels
             ForceDirectedLayouter layouter = new ForceDirectedLayouter();
             AutoLayout = ReactiveCommand.Create(() => layouter.Layout(new Configuration { Network = Network }, 10000));
 
-            //TODO: selected Node is not a groupnode so it has no subnet, but every Node should have a subnet
-            //TODO: always create subnet even if empty nests
+            // ShowSubNetwork command, generates a subnetwork if the selected node is a tasknode
             ShowSubNetwork = ReactiveCommand.Create(() =>
             {
                 if (!Network.SelectedNodes.Items.Any())
@@ -242,26 +238,7 @@ namespace IFC_GUI.ViewModels
                     }
                 }
             }
-
-            // TODO:
-            // Testen auf Liste mit 0 Elemente, liste mit N Elementen, Liste die null ist
-
             return crumbNetwork.Network;
-
-            // create a subnetwork foreach task on the current Level, that nests other tasks
-            /*foreach (TaskModel tm in allTaskModelsOnCurrentLevel)
-            {
-                if (tm.IsNestedBy.Any() && recursive)
-                {
-                    var subnetwork = new NetworkBreadcrumb
-                    {
-                        Name = tm.Name,
-                        Network = new NetworkViewModel()
-                    };
-                    crumbBar.ActivePath.Add(subnetwork);
-                    RecursiveNestingTaskModelToTaskNode(allTaskModelsOnLowerLevelThanCurrent, crumbBar, subnetwork, tm.GlobalId, true);
-                }
-            }*/
         }
     }
 }

@@ -1,14 +1,10 @@
-﻿using System;
+﻿using NodeNetwork.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using NodeNetwork.ViewModels;
 
 namespace IFC_GUI.ViewModels.Toolkit.Layout
 {
-	internal interface IState
+    internal interface IState
 	{
 		Vector GetNodePosition(NodeViewModel node);
 		void SetNodePosition(NodeViewModel node, Vector pos);

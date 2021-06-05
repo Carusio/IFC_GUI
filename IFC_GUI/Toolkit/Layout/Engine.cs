@@ -1,14 +1,12 @@
-﻿using System;
+﻿using NodeNetwork.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using NodeNetwork.ViewModels;
 
 namespace IFC_GUI.ViewModels.Toolkit.Layout
 {
-	internal class Engine
+    internal class Engine
 	{
 		internal void ApplyRandomShift(NetworkViewModel network)
 		{

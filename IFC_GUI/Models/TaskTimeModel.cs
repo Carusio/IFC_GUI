@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IFC_GUI.Models
+﻿namespace IFC_GUI.Models
 {
     // TaskTimeModel based on IfcTaskTime class
     public class TaskTimeModel
