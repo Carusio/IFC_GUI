@@ -9,6 +9,7 @@
                           
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
+    <!--reference for the question mark icon: question mark clipart PNG Designed By IYIKON from <a href="https://pngtree.com/">Pngtree.com</a>-->
     
     <UserControl.Resources>
         <!-- a style of a rounded plus button-->
@@ -69,34 +70,154 @@
                                     </Grid.RowDefinitions>
 
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="110"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Medium" Margin="5,0,0,0">IfcTaskAttributes:</TextBlock>
-                                    <TextBlock Grid.Row="1" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">GlobalID:</TextBlock>
+                                    <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock FontSize="10" Margin="15,0,0,0">GlobalID:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Globally unique identifier within the entire software world."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="guidTextBox" IsReadOnly="True" Text="{Binding TaskModel.GlobalId}"></TextBox>
-                                    <TextBlock Grid.Row="2" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Name:</TextBlock>
+                                    <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="2" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Name:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Name for use by the participating software systems or users."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="nameTextBox" Text="{Binding TaskModel.Name}"></TextBox>
-                                    <TextBlock Grid.Row="3" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Description:</TextBlock>
+                                    <StackPanel Grid.Row="3" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="3" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Description:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Description, provided for exchanging informative comments."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="descriptionTextBox" Text="{Binding TaskModel.Description}"></TextBox>
-                                    <TextBlock Grid.Row="4" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">ObjectType:</TextBlock>
+                                    <StackPanel Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="4" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">ObjectType:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute PredefinedType is set to USERDEFINED." ToolTipService.ShowDuration="20000"/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="objecttypeTextBox" Text="{Binding TaskModel.ObjectType}"></TextBox>
-                                    <TextBlock Grid.Row="5" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Identification:</TextBlock>
+                                    <StackPanel Grid.Row="5" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="5" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Identification:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="An identifying designation given to a process or activity. It is the identifier at the occurrence level."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="identificationTextBox" Text="{Binding TaskModel.Identification}"></TextBox>
-                                    <TextBlock Grid.Row="6" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">LongDescription:</TextBlock>
+                                    <StackPanel Grid.Row="6" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="6" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">LongDescription:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="An extended description or narrative that may be provided."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="longdescriptionTextBox" Text="{Binding TaskModel.LongDescription}"></TextBox>
-                                    <TextBlock Grid.Row="7" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Status:</TextBlock>
+                                    <StackPanel Grid.Row="7" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="7" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Status:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Current status of the task."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="statusTextBox" Text="{Binding TaskModel.Status}"></TextBox>
-                                    <TextBlock Grid.Row="8" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">WorkMethod:</TextBlock>
+                                    <StackPanel Grid.Row="8" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="8" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">WorkMethod:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="The method of work used in carrying out a task."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="8" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="workmethodTextBox" Text="{Binding TaskModel.WorkMethod}"></TextBox>
-                                    <TextBlock Grid.Row="9" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">IsMilestone:</TextBlock>
+                                    <StackPanel Grid.Row="9" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="9" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">IsMilestone:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Identifies whether a task is a milestone task (=TRUE) or not (= FALSE)."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <CheckBox Grid.Row="9" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,70,0" x:Name="ismilstoneCheckBox" IsChecked="{Binding TaskModel.IsMilestone}"></CheckBox>
-                                    <TextBlock Grid.Row="10" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Priority:</TextBlock>
+                                    <StackPanel Grid.Row="10" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="10" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">Priority:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="A value that indicates the relative priority of the task (in comparison to the priorities of other tasks)."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <TextBox Grid.Row="10" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="10" x:Name="priorityTextBox" PreviewTextInput="PriorityTextBox_PreviewTextInput" Text="{Binding TaskModel.Priority}"></TextBox>
-                                    <TextBlock Grid.Row="11" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">TaskTime:</TextBlock>
+                                    <StackPanel Grid.Row="11" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="11" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">TaskTime:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Time related information for the task."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <Button Grid.Row="11" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="9" x:Name="tasktimeButton" Click="TasktimeButton_Click">Open TaskTime Properties</Button>
-                                    <TextBlock Grid.Row="12" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">PredefinedType:</TextBlock>
+                                    <StackPanel Grid.Row="12" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Grid.Row="12" FontSize="10" VerticalAlignment="Center" Margin="15,0,0,0">PredefinedType:</TextBlock>
+                                        <Image Width="12" Margin="5,0,0,0" VerticalAlignment="Center">
+                                            <Image.Source>
+                                                <BitmapImage DecodePixelWidth="20" UriSource="..\..\..\Images\question mark vector icon_4236972.png"/>
+                                            </Image.Source>
+                                            <Image.ToolTip>
+                                                <ToolTip Content="Identifies the predefined types of a task from which the type required may be set."/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </StackPanel>
                                     <ComboBox Grid.Row="12" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Height="16" MinWidth="150" FontSize="9" x:Name="predefinedtypeComboBox" SelectedIndex="{Binding TaskModel.PredefinedType}">
                                         <ComboBoxItem>Attendance</ComboBoxItem>
                                         <ComboBoxItem>Construction</ComboBoxItem>

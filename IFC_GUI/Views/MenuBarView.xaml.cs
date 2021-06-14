@@ -62,12 +62,12 @@ namespace IFC_GUI.Views
 
             MainWindowView mw = (MainWindowView)Window.GetWindow(this);
 
-            mw.ViewModel.globalFileName = openFileDialog.FileName;
+            mw.ViewModel.GlobalFilename = openFileDialog.FileName;
 
             try
             {
-                mw.ViewModel.globalAllTaskModels = IfcDataHandling.OpenIfcData(openFileDialog.FileName);
-                mw.ViewModel.GenerateTaskNodeForEachTaskModelOnCurrentLevel(mw.ViewModel.globalAllTaskModels, (NetworkBreadcrumb)mw.ViewModel.NetworkBreadcrumbBar.ActivePath.Items.First(), "");
+                mw.ViewModel.GlobalAllTaskModels = IfcDataHandling.OpenIfcData(openFileDialog.FileName);
+                mw.ViewModel.GenerateTaskNodeForEachTaskModelOnCurrentLevel(mw.ViewModel.GlobalAllTaskModels, (NetworkBreadCrumb)mw.ViewModel.NetworkBreadCrumbBar.ActivePath.Items.First(), "");
             }
             catch (FileLoadException fle)
             {
@@ -83,9 +83,9 @@ namespace IFC_GUI.Views
             // force focus on network, so the markup bindings trigger and the changes to the attributes in the GUI are registered
             mw.networkView.Focus();
 
-            if (!(mw.ViewModel.globalFileName == null))
+            if (!(mw.ViewModel.GlobalFilename == null))
             {
-                IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.globalFileName));
+                IfcDataHandling.UpdateIfcData(mw.ViewModel.GlobalFilename, mw.ViewModel.GlobalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.GlobalFilename));
                 MessageBox.Show("File saved.");
             } else
             {
@@ -112,27 +112,27 @@ namespace IFC_GUI.Views
             {
                 string wantedFileExtension = System.IO.Path.GetExtension(saveFileDialog.FileName);
                 string filePathWithoutExtension = System.IO.Path.ChangeExtension(saveFileDialog.FileName, null);
-                string globalFileExtension = System.IO.Path.GetExtension(mw.ViewModel.globalFileName);
-                string globalFilePathWithoutExtension = System.IO.Path.ChangeExtension(mw.ViewModel.globalFileName, null);
+                string globalFileExtension = System.IO.Path.GetExtension(mw.ViewModel.GlobalFilename);
+                string globalFilePathWithoutExtension = System.IO.Path.ChangeExtension(mw.ViewModel.GlobalFilename, null);
 
                 // update existing ifc file
-                if (File.Exists(saveFileDialog.FileName) && saveFileDialog.FileName == mw.ViewModel.globalFileName)
+                if (File.Exists(saveFileDialog.FileName) && saveFileDialog.FileName == mw.ViewModel.GlobalFilename)
                 {
-                    IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.globalFileName));
+                    IfcDataHandling.UpdateIfcData(mw.ViewModel.GlobalFilename, mw.ViewModel.GlobalAllTaskModels, System.IO.Path.GetExtension(mw.ViewModel.GlobalFilename));
                     MessageBox.Show("File updated.");
                 }
                 // convert existing ifc file to other format
                 else if (filePathWithoutExtension == globalFilePathWithoutExtension && wantedFileExtension != globalFileExtension)
                 {
-                    IfcDataHandling.UpdateIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels, wantedFileExtension);
-                    mw.ViewModel.globalFileName = saveFileDialog.FileName;
+                    IfcDataHandling.UpdateIfcData(mw.ViewModel.GlobalFilename, mw.ViewModel.GlobalAllTaskModels, wantedFileExtension);
+                    mw.ViewModel.GlobalFilename = saveFileDialog.FileName;
                     MessageBox.Show($"File saved in {wantedFileExtension} format.");
                 }
                 // create new ifc file with new ifc project
                 else
                 {
-                    mw.ViewModel.globalFileName = saveFileDialog.FileName;
-                    IfcDataHandling.NewIfcData(mw.ViewModel.globalFileName, mw.ViewModel.globalAllTaskModels);
+                    mw.ViewModel.GlobalFilename = saveFileDialog.FileName;
+                    IfcDataHandling.NewIfcData(mw.ViewModel.GlobalFilename, mw.ViewModel.GlobalAllTaskModels);
                     MessageBox.Show("New File saved.");
                 }
             }

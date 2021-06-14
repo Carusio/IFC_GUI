@@ -12,22 +12,22 @@ namespace IFC_GUI.Views
     /// <summary>
     /// Interaction logic for BreadcrumBarView.xaml
     /// </summary>
-    public partial class BreadcrumbBarView : UserControl, IViewFor<BreadcrumbBarViewModel>
+    public partial class BreadcrumbBarView : UserControl, IViewFor<BreadCrumbBarViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty =
-            DependencyProperty.Register(nameof(ViewModel), typeof(BreadcrumbBarViewModel), typeof(BreadcrumbBarView), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(ViewModel), typeof(BreadCrumbBarViewModel), typeof(BreadcrumbBarView), new PropertyMetadata(null));
 
-        public BreadcrumbBarViewModel ViewModel
+        public BreadCrumbBarViewModel ViewModel
         {
-            get => (BreadcrumbBarViewModel)GetValue(ViewModelProperty);
+            get => (BreadCrumbBarViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
         object IViewFor.ViewModel
         {
             get => ViewModel;
-            set => ViewModel = (BreadcrumbBarViewModel)value;
+            set => ViewModel = (BreadCrumbBarViewModel)value;
         }
         #endregion
         public BreadcrumbBarView()
@@ -39,7 +39,7 @@ namespace IFC_GUI.Views
                 this.BindList(ViewModel, vm => vm.ActivePath, v => v.list.ItemsSource).DisposeWith(d);
                 this.WhenAnyValue(v => v.list.SelectedItem)
                     .Where(i => i != null)
-                    .Cast<BreadcrumbViewModel>()
+                    .Cast<BreadCrumbViewModel>()
                     .Do(_ => list.UnselectAll())
                     .InvokeCommand(this, v => v.ViewModel.SelectCrumb).DisposeWith(d);
             });

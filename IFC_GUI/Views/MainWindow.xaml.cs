@@ -41,7 +41,7 @@ namespace IFC_GUI.Views
             {
                 this.OneWayBind(ViewModel, vm => vm.Network, v => v.networkView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.NodeList, v => v.nodeListView.ViewModel).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.NetworkBreadcrumbBar, v => v.breadcrumbBarView.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkBreadCrumbBar, v => v.breadcrumbBarView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.MenuBar, v => v.menuBarView.ViewModel).DisposeWith(d);
 
                 // right-click menu to show the subnetwork of a node

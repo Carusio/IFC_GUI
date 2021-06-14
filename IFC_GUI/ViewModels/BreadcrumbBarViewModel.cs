@@ -12,7 +12,7 @@ namespace IFC_GUI.ViewModels
     /// <summary>
     /// Viewmodel for a single element of the BreadcrumbBar.
     /// </summary>
-    public class BreadcrumbViewModel : ReactiveObject
+    public class BreadCrumbViewModel : ReactiveObject
     {
         #region Name
         /// <summary>
@@ -31,36 +31,36 @@ namespace IFC_GUI.ViewModels
     /// ViewModel for the BreadcrumbBar.
     /// This UI element displays a path as a list of path elements (crumbs), allowing navigation by selection of path elements.
     /// </summary>
-    public class BreadcrumbBarViewModel : ReactiveObject
+    public class BreadCrumbBarViewModel : ReactiveObject
     {
-        static BreadcrumbBarViewModel()
+        static BreadCrumbBarViewModel()
         {
-            NNViewRegistrar.AddRegistration(() => new BreadcrumbBarView(), typeof(IViewFor<BreadcrumbBarViewModel>));
+            NNViewRegistrar.AddRegistration(() => new BreadcrumbBarView(), typeof(IViewFor<BreadCrumbBarViewModel>));
         }
 
         /// <summary>
         /// The path that is currently displayed in the bar.
         /// Add or remove elements to modify the path.
         /// </summary>
-        public ISourceList<BreadcrumbViewModel> ActivePath { get; } = new SourceList<BreadcrumbViewModel>();
+        public ISourceList<BreadCrumbViewModel> ActivePath { get; } = new SourceList<BreadCrumbViewModel>();
 
         #region ActiveElement
         /// <summary>
         /// The deepest element of the currect path. (Last element of ActivePath)
         /// </summary>
-        public BreadcrumbViewModel ActiveItem => _activeItem.Value;
-        private readonly ObservableAsPropertyHelper<BreadcrumbViewModel> _activeItem;
+        public BreadCrumbViewModel ActiveItem => _activeItem.Value;
+        private readonly ObservableAsPropertyHelper<BreadCrumbViewModel> _activeItem;
         #endregion
 
         /// <summary>
         /// Navigate to the subpath represented by the selected crumb which is passed as a parameter.
         /// Only this crumb and its ancestors are kept, the rest of the path is removed.
         /// </summary>
-        public ReactiveCommand<BreadcrumbViewModel, Unit> SelectCrumb { get; }
+        public ReactiveCommand<BreadCrumbViewModel, Unit> SelectCrumb { get; }
 
-        public BreadcrumbBarViewModel()
+        public BreadCrumbBarViewModel()
         {
-            SelectCrumb = ReactiveCommand.Create((BreadcrumbViewModel crumb) =>
+            SelectCrumb = ReactiveCommand.Create((BreadCrumbViewModel crumb) =>
             {
                 ActivePath.Edit(l =>
                 {

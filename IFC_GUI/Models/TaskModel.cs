@@ -21,7 +21,7 @@ namespace IFC_GUI.Models
 
         public TaskModel() : base ()
         {
-            // so the combobox shows the default value
+            // necessary so the combobox shows the default value
             PredefinedType = -1;
         }
 

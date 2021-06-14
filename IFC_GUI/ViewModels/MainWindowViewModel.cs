@@ -13,7 +13,7 @@ using System.Reactive.Linq;
 
 namespace IFC_GUI.ViewModels
 {
-    public class NetworkBreadcrumb : BreadcrumbViewModel
+    public class NetworkBreadCrumb : BreadCrumbViewModel
     {
         #region Network
         private NetworkViewModel _network;
@@ -35,18 +35,14 @@ namespace IFC_GUI.ViewModels
         public NetworkViewModel Network => _network.Value;
         #endregion
 
-        public BreadcrumbBarViewModel NetworkBreadcrumbBar { get; } = new BreadcrumbBarViewModel();
+        public BreadCrumbBarViewModel NetworkBreadCrumbBar { get; } = new BreadCrumbBarViewModel();
         public NodeListViewModel NodeList { get; } = new NodeListViewModel();
         public MenuBarViewModel MenuBar { get; } = new MenuBarViewModel();
 
         // List of all TaskModels that are currently shown via TaskNodes
-        public List<TaskModel> globalAllTaskModels { get; set; } = new List<TaskModel>();
+        public List<TaskModel> GlobalAllTaskModels { get; set; } = new List<TaskModel>();
         // the path of the ifc file which is loaded
-        public string globalFileName { get; set; }
-
-        // TaskTime Window
-        //public IfcTaskTimeViewModel TaskTimeWindow { get; set; }
-        //
+        public string GlobalFilename { get; set; }
 
         // ShowSubnetwork command
         public ReactiveCommand<Unit, Unit> ShowSubNetwork { get; }
@@ -54,34 +50,33 @@ namespace IFC_GUI.ViewModels
 
 
 
-
         public MainWindowViewModel()
         {
-            this.WhenAnyValue(vm => vm.NetworkBreadcrumbBar.ActiveItem).Cast<NetworkBreadcrumb>()
+            this.WhenAnyValue(vm => vm.NetworkBreadCrumbBar.ActiveItem).Cast<NetworkBreadCrumb>()
                 .Select(b => b?.Network)
                 .ToProperty(this, vm => vm.Network, out _network);
 
-            var mainNetwork = new NetworkBreadcrumb
+            var mainNetwork = new NetworkBreadCrumb
             {
                 Name = "Main",
                 TaskModel = null,
                 Network = new NetworkViewModel()
             };
 
-            NetworkBreadcrumbBar.ActivePath.Add(mainNetwork);
+            NetworkBreadCrumbBar.ActivePath.Add(mainNetwork);
 
             // update globalAllTaskModels list, when IfcTaskNodes were added or removed
             mainNetwork.Network.Nodes.Connect().ActOnEveryObject(
                 addedNode => {
-                    if (addedNode.GetType() == typeof(IfcTaskNodeViewModel) && !globalAllTaskModels.Contains(((IfcTaskNodeViewModel)addedNode).TaskModel))
+                    if (addedNode.GetType() == typeof(IfcTaskNodeViewModel) && !GlobalAllTaskModels.Contains(((IfcTaskNodeViewModel)addedNode).TaskModel))
                     {
-                        globalAllTaskModels.Add(((IfcTaskNodeViewModel)addedNode).TaskModel);
+                        GlobalAllTaskModels.Add(((IfcTaskNodeViewModel)addedNode).TaskModel);
                     }
                 },
                 removedNode => {
-                    if (removedNode.GetType() == typeof(IfcTaskNodeViewModel) && globalAllTaskModels.Contains(((IfcTaskNodeViewModel)removedNode).TaskModel)) // check 'contains' is not needed but we keep it for safety
+                    if (removedNode.GetType() == typeof(IfcTaskNodeViewModel) && GlobalAllTaskModels.Contains(((IfcTaskNodeViewModel)removedNode).TaskModel)) // check 'contains' is not needed but we keep it for safety
                     {
-                        globalAllTaskModels.Remove(((IfcTaskNodeViewModel)removedNode).TaskModel);
+                        GlobalAllTaskModels.Remove(((IfcTaskNodeViewModel)removedNode).TaskModel);
                     }
             });
 
@@ -134,11 +129,12 @@ namespace IFC_GUI.ViewModels
                 {
                     return;
                 }
+                // else create subnetwork, act on changes to the subnetwork and generate taskNodes foreach nested task
                 else
                 {
                     selectedTaskNode = (IfcTaskNodeViewModel)selectedNode;
 
-                    var subnetwork = new NetworkBreadcrumb
+                    var subnetwork = new NetworkBreadCrumb
                     {
                         Name = selectedTaskNode.TaskModel.Name,
                         TaskModel = selectedTaskNode.TaskModel,
@@ -150,9 +146,9 @@ namespace IFC_GUI.ViewModels
                             if (addedNode.GetType() == typeof(IfcTaskNodeViewModel))
                             {
                                 var tm = ((IfcTaskNodeViewModel)addedNode).TaskModel;
-                                if (!globalAllTaskModels.Contains(tm))
+                                if (!GlobalAllTaskModels.Contains(tm))
                                 {
-                                    globalAllTaskModels.Add(tm);
+                                    GlobalAllTaskModels.Add(tm);
                                 }
                                 if (subnetwork.TaskModel != null) // actually not needed
                                 {
@@ -171,7 +167,7 @@ namespace IFC_GUI.ViewModels
                             if (removedNode.GetType() == typeof(IfcTaskNodeViewModel))
                             {
                                 var tm = ((IfcTaskNodeViewModel)removedNode).TaskModel;
-                                globalAllTaskModels.Remove(tm);
+                                GlobalAllTaskModels.Remove(tm);
                                 if (subnetwork.TaskModel != null) // actually not needed
                                 {
                                     tm.Nests.Remove(subnetwork.TaskModel.GlobalId);
@@ -203,13 +199,13 @@ namespace IFC_GUI.ViewModels
                         }
                         );
 
-                    NetworkBreadcrumbBar.ActivePath.Add(subnetwork);
-                    GenerateTaskNodeForEachTaskModelOnCurrentLevel(globalAllTaskModels, subnetwork, selectedTaskNode.TaskModel.GlobalId);
+                    NetworkBreadCrumbBar.ActivePath.Add(subnetwork);
+                    GenerateTaskNodeForEachTaskModelOnCurrentLevel(GlobalAllTaskModels, subnetwork, selectedTaskNode.TaskModel.GlobalId);
                 }
             });
         }
 
-        public NetworkViewModel GenerateTaskNodeForEachTaskModelOnCurrentLevel(List<TaskModel> allTaskModels, NetworkBreadcrumb crumbNetwork, string parentTaskModelGuid)
+        public NetworkViewModel GenerateTaskNodeForEachTaskModelOnCurrentLevel(List<TaskModel> allTaskModels, NetworkBreadCrumb crumbNetwork, string parentTaskModelGuid)
         {
             // create taskNode foreach TaskModel
             foreach (TaskModel tm in allTaskModels)
